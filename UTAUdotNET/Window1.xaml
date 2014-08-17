@@ -3,7 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="Window1" Height="300" Width="300">
     <Grid>
-        <Button x:Name="Archivos" Content="Prueba" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Background="#FFB92727" Margin="10,0,0,0"/>
+        <Button x:Name="Archivos" Content="Prueba" HorizontalAlignment="Left" VerticalAlignment="Top" Width="106" Background="#FFB92727" Margin="10,0,0,0" Height="60"/>
         <Button Content="PutoBitOkeyno&#xD;&#xA;" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="190,24,0,0" Background="#FF69D15F" Click="Button_Click"/>
 
     </Grid>
