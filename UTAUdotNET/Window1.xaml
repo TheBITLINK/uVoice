@@ -3,11 +3,11 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="Window1" Height="441.3" Width="662">
     <Grid x:Name="Opciones">
-        <Button x:Name="Archivos" Content="Archivo" HorizontalAlignment="Left" VerticalAlignment="Top" Width="100" Background="#FF1F247E" Height="25" Click="Archivos_Click" BorderBrush="#FFA5D3E0" Foreground="#FF3790AA" Margin="3,1,2,0" FontFamily="AnticFont" FontSize="14"/>
-        <Button x:Name="Editar" Content="Editar" HorizontalAlignment="Left" VerticalAlignment="Top" Width="100" Background="#FF1F247E" Height="25" Click="Archivos_Click" BorderBrush="#FFA5D3E0" Foreground="#FF3790AA" Margin="103,1,0,0" FontFamily="AnticFont" FontSize="14"/>
-        <Button x:Name="Ver" Content="Ver" HorizontalAlignment="Left" VerticalAlignment="Top" Width="100" Background="#FF1F247E" Height="25" Click="Archivos_Click" BorderBrush="#FFA5D3E0" Foreground="#FF3790AA" Margin="203,1,0,0" FontFamily="AnticFont" FontSize="14"/>
-        <Button x:Name="Herramientas" Content="Herramientas" HorizontalAlignment="Left" VerticalAlignment="Top" Width="100" Background="#FF1F247E" Height="25" Click="Archivos_Click" BorderBrush="#FFA5D3E0" Foreground="#FF3790AA" Margin="403,1,0,0" FontFamily="AnticFont" FontSize="14"/>
-        <Button x:Name="Opciones1" Content="Opciones" HorizontalAlignment="Left" VerticalAlignment="Top" Width="100" Background="#FF1F247E" Height="25" Click="Archivos_Click" BorderBrush="#FFA5D3E0" Foreground="#FF3790AA" Margin="303,1,0,0" FontFamily="AnticFont" FontSize="14"/>
+        <Button x:Name="Archivos" Content="Archivo" HorizontalAlignment="Left" VerticalAlignment="Top" Width="100" Background="#FF1F247E" Height="25" BorderBrush="#FFA5D3E0" Foreground="#FF3790AA" Margin="3,1,2,0" FontFamily="AnticFont" FontSize="14"/>
+        <Button x:Name="Editar" Content="Editar" HorizontalAlignment="Left" VerticalAlignment="Top" Width="100" Background="#FF1F247E" Height="25" BorderBrush="#FFA5D3E0" Foreground="#FF3790AA" Margin="103,1,0,0" FontFamily="AnticFont" FontSize="14"/>
+        <Button x:Name="Ver" Content="Ver" HorizontalAlignment="Left" VerticalAlignment="Top" Width="100" Background="#FF1F247E" Height="25" BorderBrush="#FFA5D3E0" Foreground="#FF3790AA" Margin="203,1,0,0" FontFamily="AnticFont" FontSize="14"/>
+        <Button x:Name="Herramientas" Content="Herramientas" HorizontalAlignment="Left" VerticalAlignment="Top" Width="100" Background="#FF1F247E" Height="25" BorderBrush="#FFA5D3E0" Foreground="#FF3790AA" Margin="403,1,0,0" FontFamily="AnticFont" FontSize="14"/>
+        <Button x:Name="Opciones1" Content="Opciones" HorizontalAlignment="Left" VerticalAlignment="Top" Width="100" Background="#FF1F247E" Height="25" BorderBrush="#FFA5D3E0" Foreground="#FF3790AA" Margin="303,1,0,0" FontFamily="AnticFont" FontSize="14"/>
         <Button x:Name="Plugins" Content="Plugins" HorizontalAlignment="Left" VerticalAlignment="Top" Width="100" Background="#FF1F247E" Height="25" Click="Archivos_Click" BorderBrush="#FFA5D3E0" Foreground="#FF3790AA" Margin="503,1,0,0" FontFamily="AnticFont" FontSize="14"/>
 
 

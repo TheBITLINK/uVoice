@@ -29,29 +29,13 @@ namespace UTAUdotNET
             Archivos.Content = "TL";
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            Editar.Content = "TL";
-        }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            Ver.Content = "TL";
-        }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            Herramientas.Content = "TL";
-        }
-
         private void Archivos_Click(object sender, RoutedEventArgs e)
         {
-            Opciones1.Content = "TL";
+
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            Plugins.Content = "TL";
-        }
+       
+        
     }
 }
+
