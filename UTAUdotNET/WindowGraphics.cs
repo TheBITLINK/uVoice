@@ -27,7 +27,7 @@ namespace UTAUdotNET
             IntPtr hwnd,
             ref MARGINS pMarInset);
 
-        public void ExtendDwm(Window wnd)
+        public bool ExtendDwm(Window wnd)
         {
             try
             {
@@ -47,23 +47,26 @@ namespace UTAUdotNET
                 // Extend glass frame into client area 
                 // Note that the default desktop Dpi is 96dpi. The  margins are 
                 // adjusted for the system Dpi.
-                margins.cxLeftWidth = 5;
-                margins.cxRightWidth = 5;
+                margins.cxLeftWidth = 0;
+                margins.cxRightWidth = 0;
                 margins.cyTopHeight = Convert.ToInt32((72 + 5) * (DesktopDpiX / 96));
-                margins.cyBottomHeight = 5;
+                margins.cyBottomHeight = 0;
 
                 int hr = WindowRendering.DwmExtendFrameIntoClientArea(mainWindowSrc.Handle, ref margins);
                 // 
                 if (hr < 0)
                 {
-                    //DwmExtendFrameIntoClientArea Failed
+                    return false;
                 }
+                return true;
             }
             // If not Vista, paint background white. 
             catch (DllNotFoundException)
             {
-                Application.Current.MainWindow.Background = Brushes.Black;
+                return false;
             }
         }
+
+
     }
 }

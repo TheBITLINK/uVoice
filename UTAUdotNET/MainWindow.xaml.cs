@@ -44,6 +44,27 @@ namespace UTAUdotNET
             wdr.ExtendDwm(this);
         }
 
+        bool Transparent { get; set; }
+
+        public void Transparency(bool status)
+        {
+            Transparent = status;
+            if (!status)
+            {
+                titlebar.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#111111"));
+                controlarea.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#333333"));
+                mainmenu.BorderBrush = Brushes.Transparent;
+                projectnameblur.Visibility = System.Windows.Visibility.Hidden;
+            }
+            else
+            {
+                titlebar.Background = Brushes.Transparent;
+                controlarea.Background = null;
+                mainmenu.BorderBrush = Brushes.White;
+                projectnameblur.Visibility = System.Windows.Visibility.Visible;
+            }
+        }
+
         private void Grid_MouseDown(object sender, MouseButtonEventArgs e)
         {
             if (!Clicked)
@@ -63,15 +84,37 @@ namespace UTAUdotNET
         {
             if (WindowState == System.Windows.WindowState.Maximized)
             {
+                MaxHeight = double.PositiveInfinity;
+                MaxWidth = double.PositiveInfinity;
+                this.WindowState = WindowState.Normal;
                 this.WindowState = System.Windows.WindowState.Normal;
                 Clicked = false;
                 adr.Visibility = System.Windows.Visibility.Hidden;
+                Transparency(true);
                 return;
             }
             if (WindowState == System.Windows.WindowState.Normal)
             {
+                System.Drawing.Point pt =
+                        System.Windows.Forms.Cursor.Position;
+                System.Windows.Forms.Screen currentScreen;
+                currentScreen =
+                        System.Windows.Forms.Screen.FromPoint(pt);
+                if (currentScreen.Primary)
+                {
+                    MaxHeight =
+                        SystemParameters.MaximizedPrimaryScreenHeight;
+                    MaxWidth =
+                        SystemParameters.MaximizedPrimaryScreenWidth;
+                }
+                else
+                {
+                    MaxHeight = double.PositiveInfinity;
+                    MaxWidth = double.PositiveInfinity;
+                }
                 this.WindowState = System.Windows.WindowState.Maximized;
                 adr.Visibility = System.Windows.Visibility.Visible;
+                Transparency(false);
                 Clicked = false;
                 return;
             }

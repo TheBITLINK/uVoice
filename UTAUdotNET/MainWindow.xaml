@@ -2,37 +2,62 @@
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:local="clr-namespace:UTAUdotNET" x:Class="UTAUdotNET.MainWindow"
-        Title="UTAU.net" Background="Transparent" Height="600" Width="1024" MinWidth="1024" MinHeight="600" WindowStyle="None" Loaded="Window_Loaded">
+        Title="UTAU.net" Background="Transparent" Height="600" Width="1024" MinWidth="1024" MinHeight="600" WindowStyle="None" Loaded="Window_Loaded" Icon="icon.ico">
     <Grid>
-        <Grid Height="64" Margin="0" VerticalAlignment="Top" Background="#00000000" MouseDown="Grid_MouseDown">
-            <Button Content="UTAU.net" HorizontalAlignment="Left" Margin="0,-1,0,0" Height="32" VerticalAlignment="Top" Click="Button_Click"/>
-            <Menu HorizontalAlignment="Left" Height="32" Margin="84,0,0,0" Background="#7FFFFFFF" VerticalAlignment="Top" BorderBrush="White" BorderThickness="1">
-                <MenuItem Header="Archivo"/>
-                <MenuItem Header="Editar"/>
-                <MenuItem Header="Ver"/>
-                <MenuItem Header="Proyecto"/>
-                <MenuItem Header="Herramientas"/>
-                <MenuItem Header="Ayuda"/>
-            </Menu>
-            <Button x:Name="close" Content="X" HorizontalAlignment="Right" Height="32" Margin="0" VerticalAlignment="Top" Width="32" IsCancel="True" Background="#FF800B0B" Foreground="White" Click="close_Click"/>
-            <Label Content="Proyecto Nuevo (*)" Height="32" Margin="460,0,101,0" VerticalAlignment="Top" HorizontalContentAlignment="Right" FontSize="18">
-                <Label.Effect>
-                    <BlurEffect/>
-                </Label.Effect>
-            </Label>
-            <Label Content="Proyecto Nuevo (*)" Height="32" Margin="460,0,101,0" VerticalAlignment="Top" HorizontalContentAlignment="Right" FontSize="18"/>
-            <Button Content="" HorizontalAlignment="Right" Height="32" Margin="0,0,32,0" VerticalAlignment="Top" Width="32" IsCancel="True" Foreground="White"/>
-            <Button x:Name="maxres" HorizontalAlignment="Right" Height="32" Margin="0,0,32,0" VerticalAlignment="Top" Width="32" IsCancel="True" Padding="0" Click="maxres_Click">
-                <Grid>
-                    <Rectangle Width="11" Height="10" HorizontalAlignment="Center" VerticalAlignment="Center" Stroke="{Binding Foreground, ElementName=maxres}"/>
-                    <Rectangle x:Name="adr" Width="11" Height="10" HorizontalAlignment="Center" VerticalAlignment="Center" Stroke="{Binding Foreground, ElementName=maxres}" Margin="-10,10,0,0" Visibility="Hidden"/>
-                </Grid>
-            </Button>
-            <Button x:Name="minimize" Content="_" HorizontalAlignment="Right" Height="32" Margin="0,0,64,0" VerticalAlignment="Top" Width="32" IsCancel="True" Click="minimize_Click"/>
-        </Grid>
-        <Grid Margin="0,24,0,0">
-            <local:PianoRoll Margin="5,54,5,5" VerticalAlignment="Top" Background="#FF333333"/>
-        </Grid>
+        <Grid>
+            <Grid x:Name="titlebar" Height="78" Margin="0" VerticalAlignment="Top" Background="#00000000" MouseDown="Grid_MouseDown">
+                <Button HorizontalAlignment="Left" Margin="0,-1,0,0" Height="32" VerticalAlignment="Top" Click="Button_Click" Padding="0" HorizontalContentAlignment="Left">
+                    <Button.Background>
+                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                            <GradientStop Color="Black" Offset="1"/>
+                            <GradientStop Color="#FF004BB8"/>
+                        </LinearGradientBrush>
+                    </Button.Background>
+                    <Grid>
+                        <Image HorizontalAlignment="Left" Width="24" Source="Resources/logo_nobg.png" VerticalAlignment="Center" Height="24" Margin="0"/>
+                        <Label Content="utau.net" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="24,0,0,0" FontSize="12"/>
+                    </Grid>
+                </Button>
+                <Menu x:Name="mainmenu" HorizontalAlignment="Left" Height="32" Margin="82,0,0,0" Background="#7FFFFFFF" VerticalAlignment="Top" BorderBrush="White" BorderThickness="1">
+                    <MenuItem Header="Editar"/>
+                    <MenuItem Header="Ver"/>
+                    <MenuItem Header="Proyecto"/>
+                    <MenuItem Header="Herramientas">
+                        <MenuItem Header="Plugins"/>
+                        <MenuItem Header="Opciones"/>
+                    </MenuItem>
+                    <MenuItem Header="Ayuda"/>
+                </Menu>
+                <Button x:Name="close" Content="X" HorizontalAlignment="Right" Height="32" Margin="0" VerticalAlignment="Top" Width="32" IsCancel="True" Background="#FF800B0B" Foreground="White" Click="close_Click"/>
+                <Label x:Name="projectnameblur" Content="Proyecto Nuevo (*)" Height="32" Margin="460,0,101,0" VerticalAlignment="Top" HorizontalContentAlignment="Right" FontSize="18">
+                    <Label.Effect>
+                        <BlurEffect/>
+                    </Label.Effect>
+                </Label>
+                <Label x:Name="projectname" Content="Proyecto Nuevo (*)" Height="32" Margin="460,0,101,0" VerticalAlignment="Top" HorizontalContentAlignment="Right" FontSize="18"/>
+                <Button Content="" HorizontalAlignment="Right" Height="32" Margin="0,0,32,0" VerticalAlignment="Top" Width="32" IsCancel="True" Foreground="White"/>
+                <Button x:Name="maxres" HorizontalAlignment="Right" Height="32" Margin="0,0,32,0" VerticalAlignment="Top" Width="32" IsCancel="True" Padding="0" Click="maxres_Click">
+                    <Grid>
+                        <Rectangle Width="11" Height="10" HorizontalAlignment="Center" VerticalAlignment="Center" Stroke="{Binding Foreground, ElementName=maxres}"/>
+                        <Rectangle x:Name="adr" Width="11" Height="10" HorizontalAlignment="Center" VerticalAlignment="Center" Stroke="{Binding Foreground, ElementName=maxres}" Margin="-10,10,0,0" Visibility="Hidden"/>
+                    </Grid>
+                </Button>
+                <Button x:Name="minimize" Content="_" HorizontalAlignment="Right" Height="32" Margin="0,0,64,0" VerticalAlignment="Top" Width="32" IsCancel="True" Click="minimize_Click"/>
+            </Grid>
+            <Grid x:Name="controlarea" Margin="0,32,0,0">
+                <local:PianoRoll Margin="0,46,0,0" VerticalAlignment="Top">
+                    <local:PianoRoll.Background>
+                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                            <GradientStop Color="#FF111111" Offset="0"/>
+                            <GradientStop Color="#FF111111" Offset="1"/>
+                            <GradientStop Color="#FF222222" Offset="0.5"/>
+                        </LinearGradientBrush>
+                    </local:PianoRoll.Background>
+                </local:PianoRoll>
+            </Grid>
 
+
+        </Grid>
     </Grid>
+    
 </Window>
