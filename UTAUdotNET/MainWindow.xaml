@@ -1,6 +1,7 @@
-﻿<Window x:Class="UTAUdotNET.MainWindow"
+﻿<Window
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:local="clr-namespace:UTAUdotNET" x:Class="UTAUdotNET.MainWindow"
         Title="UTAU.net" Background="Transparent" Height="600" Width="1024" MinWidth="1024" MinHeight="600" WindowStyle="None" Loaded="Window_Loaded">
     <Grid>
         <Grid Height="64" Margin="0" VerticalAlignment="Top" Background="#00000000" MouseDown="Grid_MouseDown">
@@ -13,15 +14,25 @@
                 <MenuItem Header="Herramientas"/>
                 <MenuItem Header="Ayuda"/>
             </Menu>
-            <Button Content="X" HorizontalAlignment="Right" Height="32" Margin="0" VerticalAlignment="Top" Width="32" IsCancel="True" Background="#FF800B0B" Foreground="White"/>
-            <Label Content="Proyecto Nuevo (*)" Height="32" Margin="460,0,37,0" VerticalAlignment="Top" HorizontalContentAlignment="Right" FontSize="18">
+            <Button x:Name="close" Content="X" HorizontalAlignment="Right" Height="32" Margin="0" VerticalAlignment="Top" Width="32" IsCancel="True" Background="#FF800B0B" Foreground="White" Click="close_Click"/>
+            <Label Content="Proyecto Nuevo (*)" Height="32" Margin="460,0,101,0" VerticalAlignment="Top" HorizontalContentAlignment="Right" FontSize="18">
                 <Label.Effect>
                     <BlurEffect/>
                 </Label.Effect>
             </Label>
-            <Label Content="Proyecto Nuevo (*)" Height="32" Margin="460,0,37,0" VerticalAlignment="Top" HorizontalContentAlignment="Right" FontSize="18"/>
+            <Label Content="Proyecto Nuevo (*)" Height="32" Margin="460,0,101,0" VerticalAlignment="Top" HorizontalContentAlignment="Right" FontSize="18"/>
+            <Button Content="" HorizontalAlignment="Right" Height="32" Margin="0,0,32,0" VerticalAlignment="Top" Width="32" IsCancel="True" Foreground="White"/>
+            <Button x:Name="maxres" HorizontalAlignment="Right" Height="32" Margin="0,0,32,0" VerticalAlignment="Top" Width="32" IsCancel="True" Padding="0" Click="maxres_Click">
+                <Grid>
+                    <Rectangle Width="11" Height="10" HorizontalAlignment="Center" VerticalAlignment="Center" Stroke="{Binding Foreground, ElementName=maxres}"/>
+                    <Rectangle x:Name="adr" Width="11" Height="10" HorizontalAlignment="Center" VerticalAlignment="Center" Stroke="{Binding Foreground, ElementName=maxres}" Margin="-10,10,0,0" Visibility="Hidden"/>
+                </Grid>
+            </Button>
+            <Button x:Name="minimize" Content="_" HorizontalAlignment="Right" Height="32" Margin="0,0,64,0" VerticalAlignment="Top" Width="32" IsCancel="True" Click="minimize_Click"/>
         </Grid>
-        <Grid Margin="0,24,0,0"/>
+        <Grid Margin="0,24,0,0">
+            <local:PianoRoll Margin="5,54,5,5" VerticalAlignment="Top" Background="#FF333333"/>
+        </Grid>
 
     </Grid>
 </Window>

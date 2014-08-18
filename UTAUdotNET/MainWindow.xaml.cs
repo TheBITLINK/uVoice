@@ -55,26 +55,47 @@ namespace UTAUdotNET
             }
             else
             {
-                if (WindowState == System.Windows.WindowState.Maximized)
-                {
-                    this.WindowState = System.Windows.WindowState.Normal;
-                    Clicked = false;
-                    return;
-                }
-                if (WindowState == System.Windows.WindowState.Normal)
-                {
-                    this.WindowState = System.Windows.WindowState.Maximized;
-                    Clicked = false;
-                    return;
-                }     
+                this.MaximizeOrRestore();     
             }
-            
+        }
+
+        private void MaximizeOrRestore()
+        {
+            if (WindowState == System.Windows.WindowState.Maximized)
+            {
+                this.WindowState = System.Windows.WindowState.Normal;
+                Clicked = false;
+                adr.Visibility = System.Windows.Visibility.Hidden;
+                return;
+            }
+            if (WindowState == System.Windows.WindowState.Normal)
+            {
+                this.WindowState = System.Windows.WindowState.Maximized;
+                adr.Visibility = System.Windows.Visibility.Visible;
+                Clicked = false;
+                return;
+            }
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             Window1 VentanadeLocura = new Window1();
             VentanadeLocura.Show();
+        }
+
+        private void close_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
+
+        private void maxres_Click(object sender, RoutedEventArgs e)
+        {
+            this.MaximizeOrRestore();
+        }
+
+        private void minimize_Click(object sender, RoutedEventArgs e)
+        {
+            this.WindowState = System.Windows.WindowState.Minimized;
         }
     }
 }
