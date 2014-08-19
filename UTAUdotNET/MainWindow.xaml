@@ -50,10 +50,16 @@
             <Grid x:Name="titlebar" Height="78" Margin="0" VerticalAlignment="Top" Background="#00000000" MouseDown="Grid_MouseDown">
                 <Button HorizontalAlignment="Left" Margin="0,-1,0,0" Height="32" VerticalAlignment="Top" Click="Button_Click" Padding="0" HorizontalContentAlignment="Left">
                     <Button.Background>
-                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                            <GradientStop Color="#FF184485" Offset="1"/>
-                            <GradientStop Color="#FF277FFF"/>
-                        </LinearGradientBrush>
+                        <ImageBrush ImageSource="Resources/oc.png">
+                            <ImageBrush.RelativeTransform>
+                                <TransformGroup>
+                                    <ScaleTransform CenterY="0.5" CenterX="0.5"/>
+                                    <SkewTransform CenterY="0.5" CenterX="0.5"/>
+                                    <RotateTransform CenterY="0.5" CenterX="0.5"/>
+                                    <TranslateTransform/>
+                                </TransformGroup>
+                            </ImageBrush.RelativeTransform>
+                        </ImageBrush>
                     </Button.Background>
                     <Grid>
                         <Image HorizontalAlignment="Left" Width="24" Source="Resources/logo_nobg.png" VerticalAlignment="Center" Height="24" Margin="0"/>
@@ -80,23 +86,42 @@
                         <BlurEffect/>
                     </Label.Effect>
                 </Label>
-                <Button x:Name="Pausa" Content="" HorizontalAlignment="Left" Margin="50,18,0,-4" VerticalAlignment="Top" Width="130" Height="64">
-                    <Button.Background>
-                        <ImageBrush ImageSource="Resources/Pausa boton.png"/>
-                    </Button.Background>
-                    <Button.OpacityMask>
-                        <ImageBrush ImageSource="Resources/Pausa boton.png"/>
-                    </Button.OpacityMask>
-                </Button>
-                <Image HorizontalAlignment="Left" Height="78" VerticalAlignment="Top" Width="100"/>
-                <Button x:Name="Play" Content="" HorizontalAlignment="Left" Margin="3,17,0,-32" VerticalAlignment="Top" Width="134" Height="93">
-                    <Button.Background>
-                        <ImageBrush ImageSource="Resources/Play.png"/>
-                    </Button.Background>
-                </Button>
             </Grid>
-            <Grid x:Name="controlarea" Margin="4,42,-4,-10">
-                <local:PianoRoll Margin="0,46,0,0" VerticalAlignment="Top"/>
+            <Grid x:Name="controlarea" Margin="0,32,0,0">
+                <local:PianoRoll Margin="0,46,0,0" VerticalAlignment="Top">
+                    <local:PianoRoll.Background>
+                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                            <GradientStop Color="#FF111111" Offset="0"/>
+                            <GradientStop Color="#FF111111" Offset="1"/>
+                            <GradientStop Color="#FF222222" Offset="0.5"/>
+                        </LinearGradientBrush>
+                    </local:PianoRoll.Background>
+                </local:PianoRoll>
+                <WrapPanel Height="31" Margin="10,10,0,0" VerticalAlignment="Top">
+                    <Button x:Name="play" Content="" Width="24" Height="24" Margin="0">
+                        <Button.OpacityMask>
+                            <VisualBrush Visual="{StaticResource appbar_control_play}" Stretch="Fill" />
+                        </Button.OpacityMask>
+                    </Button>
+                    <Button x:Name="pause" Content="" Width="24" Height="24" Margin="10,0,0,0">
+                        <Button.OpacityMask>
+                            <VisualBrush Visual="{StaticResource appbar_control_pause}" Stretch="Fill" />
+                        </Button.OpacityMask>
+                    </Button>
+                    <Button x:Name="stop" Content="" Width="24" Height="24" Margin="10,0,0,0"/>
+                    <Grid Height="30" Width="10"/>
+                    <Button x:Name="select" Content="" Background="{DynamicResource AccentColorBrush}" Width="14" Height="24" Margin="10,0,0,0">
+                        <Button.OpacityMask>
+                            <VisualBrush Visual="{StaticResource appbar_cursor_default}" Stretch="Fill" />
+                        </Button.OpacityMask>
+                    </Button>
+                    <Button x:Name="edit" Content="" Width="24" Height="24" Margin="10,0,0,0">
+                        <Button.OpacityMask>
+                            <VisualBrush Visual="{StaticResource appbar_edit}" Stretch="Fill" />
+                        </Button.OpacityMask>
+                    </Button>
+                    <Grid Height="30" Width="10"/>
+                </WrapPanel>
             </Grid>
             <Grid x:Name="grid1" Background="#BF000000" MouseUp="grid1_MouseUp" Visibility="Hidden" Opacity="0">
                 <Grid HorizontalAlignment="Right" Height="110" Margin="0,39,10,0" VerticalAlignment="Top" Width="245">

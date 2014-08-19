@@ -189,13 +189,11 @@
     <Content Include="libmp3lame.64.dll">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Resource Include="Resources\Play.png" />
-    <Resource Include="Resources\Pausa boton.png" />
+    <Resource Include="Resources\oc.png" />
     <Resource Include="Resources\logo_nobg.png" />
     <Resource Include="icon.ico" />
     <Resource Include="Resources\logo.png" />
     <SplashScreen Include="splash.png" />
-    <Resource Include="Resources\playfome.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
