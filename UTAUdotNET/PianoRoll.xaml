@@ -4,9 +4,9 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              mc:Ignorable="d" 
-             d:DesignHeight="1000" d:DesignWidth="1000">
+             d:DesignHeight="2000" d:DesignWidth="1000">
     <Grid>
-        <ScrollViewer>
+        <ScrollViewer x:Name="sv" Loaded="sv_Loaded">
             <Grid HorizontalAlignment="Left" Margin="0" Width="150">
                 <StackPanel x:Name="Layer1">
                     <Rectangle MouseEnter="ge_MouseEnter" MouseDown="ge_MouseDown" MouseLeave="ge_MouseLeave" x:Name="ge" Height="26" Stroke="Black" VerticalAlignment="Top" >
@@ -52,6 +52,27 @@
                     <Rectangle MouseEnter="ge_MouseEnter" MouseDown="ge_MouseDown" MouseLeave="ge_MouseLeave" Fill="{Binding Fill, ElementName=ge}" Height="26" Stroke="Black" VerticalAlignment="Top"/>
                     <Rectangle MouseEnter="ge_MouseEnter" MouseDown="ge_MouseDown" MouseLeave="ge_MouseLeave" Fill="{Binding Fill, ElementName=ge}" Height="40" Stroke="Black" VerticalAlignment="Top"/>
                     <Rectangle MouseEnter="ge_MouseEnter" MouseDown="ge_MouseDown" MouseLeave="ge_MouseLeave" Fill="{Binding Fill, ElementName=ge}" Height="26" Stroke="Black" VerticalAlignment="Top"/>
+                    <Rectangle MouseEnter="ge_MouseEnter" MouseDown="ge_MouseDown" MouseLeave="ge_MouseLeave" Fill="{Binding Fill, ElementName=ge}" Height="26" Stroke="Black" VerticalAlignment="Top"/>
+                    <Rectangle MouseEnter="ge_MouseEnter" MouseDown="ge_MouseDown" MouseLeave="ge_MouseLeave" Fill="{Binding Fill, ElementName=ge}" Height="40" Stroke="Black" VerticalAlignment="Top"/>
+                    <Rectangle MouseEnter="ge_MouseEnter" MouseDown="ge_MouseDown" MouseLeave="ge_MouseLeave" Fill="{Binding Fill, ElementName=ge}" Height="40" Stroke="Black" VerticalAlignment="Top"/>
+                    <Rectangle MouseEnter="ge_MouseEnter" MouseDown="ge_MouseDown" MouseLeave="ge_MouseLeave" Fill="{Binding Fill, ElementName=ge}" Height="26" Stroke="Black" VerticalAlignment="Top"/>
+                    <Rectangle MouseEnter="ge_MouseEnter" MouseDown="ge_MouseDown" MouseLeave="ge_MouseLeave" Fill="{Binding Fill, ElementName=ge}" Height="26" Stroke="Black" VerticalAlignment="Top"/>
+                    <Rectangle MouseEnter="ge_MouseEnter" MouseDown="ge_MouseDown" MouseLeave="ge_MouseLeave" Fill="{Binding Fill, ElementName=ge}" Height="40" Stroke="Black" VerticalAlignment="Top"/>
+                    <Rectangle MouseEnter="ge_MouseEnter" MouseDown="ge_MouseDown" MouseLeave="ge_MouseLeave" Fill="{Binding Fill, ElementName=ge}" Height="26" Stroke="Black" VerticalAlignment="Top"/>
+                    <Rectangle MouseEnter="ge_MouseEnter" MouseDown="ge_MouseDown" MouseLeave="ge_MouseLeave" Fill="{Binding Fill, ElementName=ge}" Height="26" Stroke="Black" VerticalAlignment="Top"/>
+                    <Rectangle MouseEnter="ge_MouseEnter" MouseDown="ge_MouseDown" MouseLeave="ge_MouseLeave" Fill="{Binding Fill, ElementName=ge}" Height="40" Stroke="Black" VerticalAlignment="Top"/>
+                    <Rectangle MouseEnter="ge_MouseEnter" MouseDown="ge_MouseDown" MouseLeave="ge_MouseLeave" Fill="{Binding Fill, ElementName=ge}" Height="40" Stroke="Black" VerticalAlignment="Top"/>
+                    <Rectangle MouseEnter="ge_MouseEnter" MouseDown="ge_MouseDown" MouseLeave="ge_MouseLeave" Fill="{Binding Fill, ElementName=ge}" Height="26" Stroke="Black" VerticalAlignment="Top"/>
+                    <Rectangle MouseEnter="ge_MouseEnter" MouseDown="ge_MouseDown" MouseLeave="ge_MouseLeave" Fill="{Binding Fill, ElementName=ge}" Height="26" Stroke="Black" VerticalAlignment="Top"/>
+                    <Rectangle MouseEnter="ge_MouseEnter" MouseDown="ge_MouseDown" MouseLeave="ge_MouseLeave" Fill="{Binding Fill, ElementName=ge}" Height="40" Stroke="Black" VerticalAlignment="Top"/>
+                    <Rectangle MouseEnter="ge_MouseEnter" MouseDown="ge_MouseDown" MouseLeave="ge_MouseLeave" Fill="{Binding Fill, ElementName=ge}" Height="26" Stroke="Black" VerticalAlignment="Top"/>
+                    <Rectangle MouseEnter="ge_MouseEnter" MouseDown="ge_MouseDown" MouseLeave="ge_MouseLeave" Fill="{Binding Fill, ElementName=ge}" Height="26" Stroke="Black" VerticalAlignment="Top"/>
+                    <Rectangle MouseEnter="ge_MouseEnter" MouseDown="ge_MouseDown" MouseLeave="ge_MouseLeave" Fill="{Binding Fill, ElementName=ge}" Height="40" Stroke="Black" VerticalAlignment="Top"/>
+                    <Rectangle MouseEnter="ge_MouseEnter" MouseDown="ge_MouseDown" MouseLeave="ge_MouseLeave" Fill="{Binding Fill, ElementName=ge}" Height="40" Stroke="Black" VerticalAlignment="Top"/>
+                    <Rectangle MouseEnter="ge_MouseEnter" MouseDown="ge_MouseDown" MouseLeave="ge_MouseLeave" Fill="{Binding Fill, ElementName=ge}" Height="26" Stroke="Black" VerticalAlignment="Top"/>
+                    <Rectangle MouseEnter="ge_MouseEnter" MouseDown="ge_MouseDown" MouseLeave="ge_MouseLeave" Fill="{Binding Fill, ElementName=ge}" Height="26" Stroke="Black" VerticalAlignment="Top"/>
+                    <Rectangle MouseEnter="ge_MouseEnter" MouseDown="ge_MouseDown" MouseLeave="ge_MouseLeave" Fill="{Binding Fill, ElementName=ge}" Height="40" Stroke="Black" VerticalAlignment="Top"/>
+                    <Rectangle MouseEnter="ge_MouseEnter" MouseDown="ge_MouseDown" MouseLeave="ge_MouseLeave" Fill="{Binding Fill, ElementName=ge}" Height="26" Stroke="Black" VerticalAlignment="Top"/>
                 </StackPanel>
                 <StackPanel x:Name="Layer2">
                     <Rectangle MouseEnter="ge_MouseEnter" MouseDown="ge_MouseDown" MouseLeave="ge_MouseLeave" x:Name="man" Height="21" Stroke="White" Margin="0,15,50,0">
@@ -70,6 +91,21 @@
                             </LinearGradientBrush>
                         </Rectangle.Fill>
                     </Rectangle>
+                    <Rectangle MouseEnter="ge_MouseEnter" MouseDown="ge_MouseDown" MouseLeave="ge_MouseLeave" Fill="{Binding Fill, ElementName=man}" Height="21" Stroke="White" Margin="0,19,50,0"/>
+                    <Rectangle MouseEnter="ge_MouseEnter" MouseDown="ge_MouseDown" MouseLeave="ge_MouseLeave" Fill="{Binding Fill, ElementName=man}" Height="21" Stroke="White" Margin="0,19,50,0"/>
+                    <Rectangle MouseEnter="ge_MouseEnter" MouseDown="ge_MouseDown" MouseLeave="ge_MouseLeave" Fill="{Binding Fill, ElementName=man}" Height="21" Stroke="White" Margin="0,31,50,0"/>
+                    <Rectangle MouseEnter="ge_MouseEnter" MouseDown="ge_MouseDown" MouseLeave="ge_MouseLeave" Fill="{Binding Fill, ElementName=man}" Height="21" Stroke="White" Margin="0,19,50,0"/>
+                    <Rectangle MouseEnter="ge_MouseEnter" MouseDown="ge_MouseDown" MouseLeave="ge_MouseLeave" Fill="{Binding Fill, ElementName=man}" Height="21" Stroke="White" Margin="0,31,50,0"/>
+                    <Rectangle MouseEnter="ge_MouseEnter" MouseDown="ge_MouseDown" MouseLeave="ge_MouseLeave" Fill="{Binding Fill, ElementName=man}" Height="21" Stroke="White" Margin="0,19,50,0"/>
+                    <Rectangle MouseEnter="ge_MouseEnter" MouseDown="ge_MouseDown" MouseLeave="ge_MouseLeave" Fill="{Binding Fill, ElementName=man}" Height="21" Stroke="White" Margin="0,19,50,0"/>
+                    <Rectangle MouseEnter="ge_MouseEnter" MouseDown="ge_MouseDown" MouseLeave="ge_MouseLeave" Fill="{Binding Fill, ElementName=man}" Height="21" Stroke="White" Margin="0,31,50,0"/>
+                    <Rectangle MouseEnter="ge_MouseEnter" MouseDown="ge_MouseDown" MouseLeave="ge_MouseLeave" Fill="{Binding Fill, ElementName=man}" Height="21" Stroke="White" Margin="0,19,50,0"/>
+                    <Rectangle MouseEnter="ge_MouseEnter" MouseDown="ge_MouseDown" MouseLeave="ge_MouseLeave" Fill="{Binding Fill, ElementName=man}" Height="21" Stroke="White" Margin="0,31,50,0"/>
+                    <Rectangle MouseEnter="ge_MouseEnter" MouseDown="ge_MouseDown" MouseLeave="ge_MouseLeave" Fill="{Binding Fill, ElementName=man}" Height="21" Stroke="White" Margin="0,19,50,0"/>
+                    <Rectangle MouseEnter="ge_MouseEnter" MouseDown="ge_MouseDown" MouseLeave="ge_MouseLeave" Fill="{Binding Fill, ElementName=man}" Height="21" Stroke="White" Margin="0,19,50,0"/>
+                    <Rectangle MouseEnter="ge_MouseEnter" MouseDown="ge_MouseDown" MouseLeave="ge_MouseLeave" Fill="{Binding Fill, ElementName=man}" Height="21" Stroke="White" Margin="0,31,50,0"/>
+                    <Rectangle MouseEnter="ge_MouseEnter" MouseDown="ge_MouseDown" MouseLeave="ge_MouseLeave" Fill="{Binding Fill, ElementName=man}" Height="21" Stroke="White" Margin="0,19,50,0"/>
+                    <Rectangle MouseEnter="ge_MouseEnter" MouseDown="ge_MouseDown" MouseLeave="ge_MouseLeave" Fill="{Binding Fill, ElementName=man}" Height="21" Stroke="White" Margin="0,31,50,0"/>
                     <Rectangle MouseEnter="ge_MouseEnter" MouseDown="ge_MouseDown" MouseLeave="ge_MouseLeave" Fill="{Binding Fill, ElementName=man}" Height="21" Stroke="White" Margin="0,19,50,0"/>
                     <Rectangle MouseEnter="ge_MouseEnter" MouseDown="ge_MouseDown" MouseLeave="ge_MouseLeave" Fill="{Binding Fill, ElementName=man}" Height="21" Stroke="White" Margin="0,19,50,0"/>
                     <Rectangle MouseEnter="ge_MouseEnter" MouseDown="ge_MouseDown" MouseLeave="ge_MouseLeave" Fill="{Binding Fill, ElementName=man}" Height="21" Stroke="White" Margin="0,31,50,0"/>

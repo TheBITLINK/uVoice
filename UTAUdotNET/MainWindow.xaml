@@ -51,8 +51,8 @@
                 <Button HorizontalAlignment="Left" Margin="0,-1,0,0" Height="32" VerticalAlignment="Top" Click="Button_Click" Padding="0" HorizontalContentAlignment="Left">
                     <Button.Background>
                         <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                            <GradientStop Color="Black" Offset="1"/>
-                            <GradientStop Color="#FF004BB8"/>
+                            <GradientStop Color="#FF184485" Offset="1"/>
+                            <GradientStop Color="#FF277FFF"/>
                         </LinearGradientBrush>
                     </Button.Background>
                     <Grid>
@@ -61,12 +61,17 @@
                     </Grid>
                 </Button>
                 <Menu x:Name="mainmenu" HorizontalAlignment="Left" Height="32" Margin="82,0,0,0" Background="#7FFFFFFF" VerticalAlignment="Top" BorderBrush="White" BorderThickness="1">
-                    <MenuItem Header="Editar"/>
+                    <MenuItem Header="Editar">
+                        <MenuItem Header="Deshacer"/>
+                        <MenuItem Header="Rehacer"/>
+                        <MenuItem Header="-"/>
+                        
+                    </MenuItem>
                     <MenuItem Header="Ver"/>
                     <MenuItem Header="Proyecto"/>
                     <MenuItem Header="Herramientas">
                         <MenuItem Header="Plugins"/>
-                        <MenuItem Header="Opciones"/>
+                        <MenuItem Header="Opciones" Click="MenuItem_Click"/>
                     </MenuItem>
                     <MenuItem Header="Ayuda"/>
                 </Menu>
@@ -106,6 +111,7 @@
             </Grid>
         </Button>
         <Button x:Name="minimize" Content="_" HorizontalAlignment="Right" Height="32" Margin="0,0,64,0" VerticalAlignment="Top" Width="32" IsCancel="True" Click="minimize_Click"/>
+        <local:Settings x:Name="settings" Margin="0" Visibility="Hidden"/>
 
     </Grid>
 

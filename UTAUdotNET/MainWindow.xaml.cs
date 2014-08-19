@@ -42,43 +42,61 @@ namespace UTAUdotNET
         }
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            wdr.ExtendDwm(this);
-        }
+            Version win8version = new Version(6, 2, 9200, 0);
 
-        bool Transparent { get; set; }
-
-        public void Transparency(bool status)
-        {
-            Transparent = status;
-            if (!status)
+            if (Environment.OSVersion.Platform == PlatformID.Win32NT &&
+                Environment.OSVersion.Version >= win8version)
+            {
+                if (System.IO.Directory.Exists(Environment.GetEnvironmentVariable("HOMEDRIVE") + "\\AeroGlass\\"))
+                {
+                    TransparencyEnabled = wdr.ExtendDwm(this);
+                }
+                else
+                {
+                    TransparencyEnabled = false;
+                }
+            }
+            else
+            {
+                TransparencyEnabled = wdr.ExtendDwm(this);
+            }
+            if (!TransparencyEnabled)
             {
                 titlebar.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#111111"));
                 controlarea.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#333333"));
                 mainmenu.BorderBrush = Brushes.Transparent;
                 projectnameblur.Visibility = System.Windows.Visibility.Hidden;
             }
-            else
+        }
+
+        bool Transparent { get; set; }
+        bool TransparencyEnabled { get; set; }
+
+        public void Transparency(bool status)
+        {
+            if (TransparencyEnabled)
             {
-                titlebar.Background = Brushes.Transparent;
-                controlarea.Background = null;
-                mainmenu.BorderBrush = Brushes.White;
-                projectnameblur.Visibility = System.Windows.Visibility.Visible;
+                Transparent = status;
+                if (!status)
+                {
+                    titlebar.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#111111"));
+                    controlarea.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#333333"));
+                    mainmenu.BorderBrush = Brushes.Transparent;
+                    projectnameblur.Visibility = System.Windows.Visibility.Hidden;
+                }
+                else
+                {
+                    titlebar.Background = Brushes.Transparent;
+                    controlarea.Background = null;
+                    mainmenu.BorderBrush = Brushes.White;
+                    projectnameblur.Visibility = System.Windows.Visibility.Visible;
+                }
             }
         }
 
         private void Grid_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            if (!Clicked)
-            {
-                DragMove();
-                Clicked = true;
-                DoubleClickCount.Start();
-                return;
-            }
-            else
-            {
-                this.MaximizeOrRestore();     
-            }
+            TitleBar();
         }
 
         private void MaximizeOrRestore()
@@ -149,7 +167,27 @@ namespace UTAUdotNET
 
         private void projectname_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            this.DragMove();
+            TitleBar();
+        }
+
+        public void TitleBar()
+        {
+            if (!Clicked)
+            {
+                DragMove();
+                Clicked = true;
+                DoubleClickCount.Start();
+                return;
+            }
+            else
+            {
+                this.MaximizeOrRestore();
+            }
+        }
+
+        private void MenuItem_Click(object sender, RoutedEventArgs e)
+        {
+            settings.Visibility = System.Windows.Visibility.Visible;
         }
     }
 }

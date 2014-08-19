@@ -104,6 +104,9 @@
     <Compile Include="PianoRoll.xaml.cs">
       <DependentUpon>PianoRoll.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Settings.xaml.cs">
+      <DependentUpon>Settings.xaml</DependentUpon>
+    </Compile>
     <Compile Include="SideMenu.xaml.cs">
       <DependentUpon>SideMenu.xaml</DependentUpon>
     </Compile>
@@ -130,6 +133,10 @@
     <Page Include="Resources\Icons.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Settings.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="SideMenu.xaml">
       <SubType>Designer</SubType>

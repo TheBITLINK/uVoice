@@ -23,6 +23,7 @@ namespace UTAUdotNET
         public PianoRoll()
         {
             InitializeComponent();
+            
         }
 
         private void ge_MouseEnter(object sender, MouseEventArgs e)
@@ -40,6 +41,11 @@ namespace UTAUdotNET
         {
             Rectangle sendr = (Rectangle)sender;
             sendr.Opacity = 1.0;
+        }
+
+        private void sv_Loaded(object sender, RoutedEventArgs e)
+        {
+            sv.ScrollToVerticalOffset(sv.ScrollableHeight / 2);
         }
     }
 }
