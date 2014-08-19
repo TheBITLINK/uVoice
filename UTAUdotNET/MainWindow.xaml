@@ -65,7 +65,7 @@
                         <MenuItem Header="Deshacer"/>
                         <MenuItem Header="Rehacer"/>
                         <MenuItem Header="-"/>
-                        
+
                     </MenuItem>
                     <MenuItem Header="Ver"/>
                     <MenuItem Header="Proyecto"/>
@@ -80,17 +80,23 @@
                         <BlurEffect/>
                     </Label.Effect>
                 </Label>
+                <Button x:Name="Pausa" Content="" HorizontalAlignment="Left" Margin="50,18,0,-4" VerticalAlignment="Top" Width="130" Height="64">
+                    <Button.Background>
+                        <ImageBrush ImageSource="Resources/Pausa boton.png"/>
+                    </Button.Background>
+                    <Button.OpacityMask>
+                        <ImageBrush ImageSource="Resources/Pausa boton.png"/>
+                    </Button.OpacityMask>
+                </Button>
+                <Image HorizontalAlignment="Left" Height="78" VerticalAlignment="Top" Width="100"/>
+                <Button x:Name="Play" Content="" HorizontalAlignment="Left" Margin="3,17,0,-32" VerticalAlignment="Top" Width="134" Height="93">
+                    <Button.Background>
+                        <ImageBrush ImageSource="Resources/Play.png"/>
+                    </Button.Background>
+                </Button>
             </Grid>
-            <Grid x:Name="controlarea" Margin="0,32,0,0">
-                <local:PianoRoll Margin="0,46,0,0" VerticalAlignment="Top">
-                    <local:PianoRoll.Background>
-                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                            <GradientStop Color="#FF111111" Offset="0"/>
-                            <GradientStop Color="#FF111111" Offset="1"/>
-                            <GradientStop Color="#FF222222" Offset="0.5"/>
-                        </LinearGradientBrush>
-                    </local:PianoRoll.Background>
-                </local:PianoRoll>
+            <Grid x:Name="controlarea" Margin="4,42,-4,-10">
+                <local:PianoRoll Margin="0,46,0,0" VerticalAlignment="Top"/>
             </Grid>
             <Grid x:Name="grid1" Background="#BF000000" MouseUp="grid1_MouseUp" Visibility="Hidden" Opacity="0">
                 <Grid HorizontalAlignment="Right" Height="110" Margin="0,39,10,0" VerticalAlignment="Top" Width="245">
@@ -101,7 +107,11 @@
                 </Grid>
             </Grid>
         </Grid>
-        <local:SideMenu x:Name="sideMenu" HorizontalAlignment="Left" Margin="-300,0,0,0" Width="300"/>
+        <local:SideMenu x:Name="sideMenu" HorizontalAlignment="Left" Margin="-300,0,0,0" Width="300">
+            <local:SideMenu.Background>
+                <ImageBrush/>
+            </local:SideMenu.Background>
+        </local:SideMenu>
         <Button x:Name="close" Content="X" HorizontalAlignment="Right" Height="32" Margin="0" VerticalAlignment="Top" Width="32" IsCancel="True" Background="#FF800B0B" Foreground="White" Click="close_Click"/>
         <Label x:Name="projectname" Content="Proyecto Nuevo (*)" Height="32" Margin="396,0,101,0" VerticalAlignment="Top" HorizontalContentAlignment="Right" FontSize="18" MouseDown="projectname_MouseDown"/>
         <Button x:Name="maxres" HorizontalAlignment="Right" Height="32" Margin="0,0,32,0" VerticalAlignment="Top" Width="32" IsCancel="True" Padding="0" Click="maxres_Click">
