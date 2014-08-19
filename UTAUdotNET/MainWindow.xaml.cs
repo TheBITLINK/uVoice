@@ -9,6 +9,7 @@ using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
+using System.Windows.Media.Animation;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
@@ -86,7 +87,6 @@ namespace UTAUdotNET
             {
                 MaxHeight = double.PositiveInfinity;
                 MaxWidth = double.PositiveInfinity;
-                this.WindowState = WindowState.Normal;
                 this.WindowState = System.Windows.WindowState.Normal;
                 Clicked = false;
                 adr.Visibility = System.Windows.Visibility.Hidden;
@@ -122,8 +122,8 @@ namespace UTAUdotNET
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            Window1 VentanadeLocura = new Window1();
-            VentanadeLocura.Show();
+            Storyboard MenuShow = (Storyboard)this.Resources["SidemenuShow"];
+            MenuShow.Begin();
         }
 
         private void close_Click(object sender, RoutedEventArgs e)
@@ -139,6 +139,17 @@ namespace UTAUdotNET
         private void minimize_Click(object sender, RoutedEventArgs e)
         {
             this.WindowState = System.Windows.WindowState.Minimized;
+        }
+
+        private void grid1_MouseUp(object sender, MouseButtonEventArgs e)
+        {
+            Storyboard MenuHide = (Storyboard)this.Resources["SidemenuHide"];
+            MenuHide.Begin();
+        }
+
+        private void projectname_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            this.DragMove();
         }
     }
 }

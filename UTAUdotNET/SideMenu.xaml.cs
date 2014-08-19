@@ -16,30 +16,29 @@ using System.Windows.Shapes;
 namespace UTAUdotNET
 {
     /// <summary>
-    /// Lógica de interacción para PianoRoll.xaml
+    /// Lógica de interacción para SideMenu.xaml
     /// </summary>
-    public partial class PianoRoll : UserControl
+    public partial class SideMenu : UserControl
     {
-        public PianoRoll()
+        public SideMenu()
         {
             InitializeComponent();
         }
 
-        private void ge_MouseEnter(object sender, MouseEventArgs e)
+        private void ListBoxItem_MouseUp(object sender, MouseButtonEventArgs e)
         {
-            Rectangle sendr = (Rectangle)sender;
-            sendr.Opacity = 0.8;
+            Window1 VentanadeLocura = new Window1();
+            VentanadeLocura.Show();
         }
 
-        private void ge_MouseDown(object sender, MouseButtonEventArgs e)
+        private void ListBoxItem_MouseUp_1(object sender, MouseButtonEventArgs e)
         {
-
+            Application.Current.Shutdown();
         }
 
-        private void ge_MouseLeave(object sender, MouseEventArgs e)
+        private void ListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            Rectangle sendr = (Rectangle)sender;
-            sendr.Opacity = 1.0;
+            mainlb.SelectedIndex = -1;
         }
     }
 }
