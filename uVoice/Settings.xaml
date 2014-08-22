@@ -26,10 +26,7 @@
                         <Toolkit:ColorCanvas Margin="10,175,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="235" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="Black" SelectedColor="#FF333333" Height="142"></Toolkit:ColorCanvas>
                         <Label Content="Color Primario" HorizontalAlignment="Left" Height="30" Margin="10,322,0,0" VerticalAlignment="Top" Width="291" FontSize="16"/>
                         <Toolkit:ColorCanvas Margin="10,357,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="235" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="Black" SelectedColor="{DynamicResource AccentColor}" Height="142"/>
-                        <Grid Margin="311,45,5,78" Width="702">
-                            <Grid.Background>
-                                <ImageBrush ImageSource="http://d.thebit.link/img/abg.jpg" Stretch="UniformToFill"/>
-                            </Grid.Background>
+                        <Grid Margin="311,45,5,78" Width="702" Background="#FF111111">
                             <Button Content="Cambiar" HorizontalAlignment="Left" Height="29" Margin="0,0,620,0" VerticalAlignment="Bottom" Width="82"/>
                         </Grid>
                         <Label Content="Imagen de del editor" HorizontalAlignment="Left" Height="43" Margin="306,10,0,0" VerticalAlignment="Top" Width="291" FontSize="16"/>

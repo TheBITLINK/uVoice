@@ -5,7 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              mc:Ignorable="d" 
              d:DesignHeight="2000" d:DesignWidth="1000">
-    <Grid>
+    <Grid Background="#BF000000">
         <ScrollViewer x:Name="sv" Loaded="sv_Loaded">
             <Grid>
                 <Grid HorizontalAlignment="Left" Margin="0" Width="150">
@@ -130,14 +130,14 @@
                 </Grid>
             </Grid>
         </ScrollViewer>
-        <Button HorizontalAlignment="Right" VerticalAlignment="Bottom" Width="36" Margin="0,0,24,24" Height="24" Padding="0">
+        <Button HorizontalAlignment="Right" VerticalAlignment="Bottom" Width="36" Margin="0,0,24,24" Height="24" Padding="0" Background="#7FD5D5D5">
             <Rectangle Fill="Black" Width="20" Height="20">
                 <Rectangle.OpacityMask>
                     <VisualBrush Visual="{StaticResource appbar_magnify_add}" Stretch="Fill" />
                 </Rectangle.OpacityMask>
             </Rectangle>
         </Button>
-        <Button HorizontalAlignment="Right" VerticalAlignment="Bottom" Width="36" Margin="0,0,60,24" Height="24" Padding="0">
+        <Button HorizontalAlignment="Right" VerticalAlignment="Bottom" Width="36" Margin="0,0,60,24" Height="24" Padding="0" Background="#7FD5D5D5">
             <Rectangle Fill="Black" Width="20" Height="20">
                 <Rectangle.OpacityMask>
                     <VisualBrush Visual="{StaticResource appbar_magnify_minus}" Stretch="Fill" />
