@@ -63,7 +63,7 @@
                     </Button.Background>
                     <Grid>
                         <Image HorizontalAlignment="Left" Width="24" Source="Resources/logo_nobg.png" VerticalAlignment="Center" Height="24" Margin="0"/>
-                        <Label Content="utau.net" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="24,0,0,0" FontSize="12"/>
+                        <Label Content="uVoice" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="24,0,0,0" FontSize="12"/>
                     </Grid>
                 </Button>
                 <Menu x:Name="mainmenu" HorizontalAlignment="Left" Height="32" Margin="82,0,0,0" Background="#7FFFFFFF" VerticalAlignment="Top" BorderBrush="White" BorderThickness="1">

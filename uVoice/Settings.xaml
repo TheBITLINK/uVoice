@@ -1,5 +1,6 @@
 ﻿<UserControl x:Class="uVoice.Settings"
              xmlns:Controls="http://metro.mahapps.com/winfx/xaml/controls"
+             xmlns:Toolkit="http://schemas.xceed.com/wpf/xaml/toolkit"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -8,13 +9,45 @@
              d:DesignHeight="600" d:DesignWidth="1024">
     <Grid Background="#FF111111">
         <Grid Margin="0,32,0,0" Background="#FF333333">
-            <Controls:ToggleSwitch HorizontalAlignment="Left" VerticalAlignment="Top" Margin="26,45,0,0" Width="106" IsChecked="True"></Controls:ToggleSwitch>
-            <Label Content="Ventana Principal Transparente" HorizontalAlignment="Left" Height="30" Margin="10,10,0,0" VerticalAlignment="Top" Width="291" FontSize="16"/>
-            <Label Content="Desactivar Transparencia al Maximizar" HorizontalAlignment="Left" Height="30" Margin="10,75,0,0" VerticalAlignment="Top" Width="291" FontSize="16"/>
-            <Controls:ToggleSwitch HorizontalAlignment="Left" VerticalAlignment="Top" Margin="26,110,0,0" Width="106" IsChecked="True"/>
+            <TabControl Margin="0">
+                <TabItem Header="General">
+                    <Grid/>
+                </TabItem>
+                <TabItem Header="Renderizado">
+                    <Grid/>
+                </TabItem>
+                <TabItem Header="Apariencia">
+                    <Grid Background="#00000000">
+                        <Controls:ToggleSwitch HorizontalAlignment="Left" VerticalAlignment="Top" Margin="26,45,0,0" Width="106" IsChecked="True"/>
+                        <Label Content="Ventana Principal Transparente" HorizontalAlignment="Left" Height="30" Margin="10,10,0,0" VerticalAlignment="Top" Width="291" FontSize="16"/>
+                        <Label Content="Desactivar Transparencia al Maximizar" HorizontalAlignment="Left" Height="30" Margin="10,75,0,0" VerticalAlignment="Top" Width="291" FontSize="16"/>
+                        <Controls:ToggleSwitch HorizontalAlignment="Left" VerticalAlignment="Top" Margin="26,110,0,0" Width="106" IsChecked="True"/>
+                        <Label Content="Color de fondo" HorizontalAlignment="Left" Height="30" Margin="10,140,0,0" VerticalAlignment="Top" Width="291" FontSize="16"/>
+                        <Toolkit:ColorCanvas Margin="10,175,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="235" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="Black" SelectedColor="#FF333333" Height="142"></Toolkit:ColorCanvas>
+                        <Label Content="Color Primario" HorizontalAlignment="Left" Height="30" Margin="10,322,0,0" VerticalAlignment="Top" Width="291" FontSize="16"/>
+                        <Toolkit:ColorCanvas Margin="10,357,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="235" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="Black" SelectedColor="{DynamicResource AccentColor}" Height="142"/>
+                        <Grid Margin="311,45,5,78" Width="702">
+                            <Grid.Background>
+                                <ImageBrush ImageSource="http://d.thebit.link/img/abg.jpg" Stretch="UniformToFill"/>
+                            </Grid.Background>
+                            <Button Content="Cambiar" HorizontalAlignment="Left" Height="29" Margin="0,0,620,0" VerticalAlignment="Bottom" Width="82"/>
+                        </Grid>
+                        <Label Content="Imagen de del editor" HorizontalAlignment="Left" Height="43" Margin="306,10,0,0" VerticalAlignment="Top" Width="291" FontSize="16"/>
+                        <Controls:ToggleSwitch HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="323,0,0,10" Width="106"/>
+                        <Label Content="Ignorar archivo de fondo en Voice Banks y usar siempre el mio." HorizontalAlignment="Left" Height="33" Margin="306,0,0,40" VerticalAlignment="Bottom" Width="702" FontSize="16"/>
+                    </Grid>
+                </TabItem>
+                <TabItem Header="Administrador de Plugins">
+                    <Grid/>
+                </TabItem>
+                <TabItem Header="Actualizaciones">
+                    <Grid/>
+                </TabItem>
+            </TabControl>
         </Grid>
         <Button Content="&lt; Volver" HorizontalAlignment="Left" Height="32" VerticalAlignment="Top" Width="78" Click="Button_Click"/>
-        <Button Content="Guardar" HorizontalAlignment="Right" Height="32" VerticalAlignment="Top" Width="89"/>
-        <Label Content="Configuración de UTAU.net" Height="32" Margin="78,0,89,0" VerticalAlignment="Top" FontSize="16" VerticalContentAlignment="Center" MouseDown="Label_MouseDown"/>
+        <Button Content="Global" Background="{DynamicResource AccentColorBrush}" HorizontalAlignment="Right" Height="32" VerticalAlignment="Top" Width="89"/>
+        <Label Content="Opciones" Height="32" Margin="78,0,178,0" VerticalAlignment="Top" FontSize="16" VerticalContentAlignment="Center" MouseDown="Label_MouseDown"/>
+        <Button Content="Proyecto" HorizontalAlignment="Right" Height="32" VerticalAlignment="Top" Width="89" Margin="0,0,89,0"/>
     </Grid>
 </UserControl>
