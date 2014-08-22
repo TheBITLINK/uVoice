@@ -7,19 +7,19 @@ using System.Windows;
 // La información general sobre un ensamblado se controla mediante el siguiente 
 // conjunto de atributos. Cambie estos atributos para modificar la información
 // asociada con un ensamblado.
-[assembly: AssemblyTitle("UTAU .Net")]
-[assembly: AssemblyDescription("UTAU Alternative made in .net framework")]
+[assembly: AssemblyTitle("uVoice")]
+[assembly: AssemblyDescription("uVoice Project")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("TheBITLINK, TheLocura17, EMIBRAWLWERXD, CarlosVocaloid")]
-[assembly: AssemblyProduct("UTAUdotNET")]
-[assembly: AssemblyCopyright("©2014 UTAUdotNET")]
+[assembly: AssemblyCompany("TheBITLINK")]
+[assembly: AssemblyProduct("uVoice")]
+[assembly: AssemblyCopyright("©2014 TheBITLINK, see credits")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
 // Si establece ComVisible como false, los tipos de este ensamblado no estarán visibles 
 // para los componentes COM.  Si necesita obtener acceso a un tipo de este ensamblado desde 
 // COM, establezca el atributo ComVisible como true en este tipo.
-[assembly: ComVisible(false)]
+[assembly: ComVisible(true)]
 
 //Para comenzar a compilar aplicaciones que se puedan traducir, establezca 
 //<UICulture>CultureYouAreCodingWith</UICulture> en el archivo .csproj
@@ -53,3 +53,5 @@ using System.Windows;
 // [assembly: AssemblyVersion("1.0.*")]
 [assembly: AssemblyVersion("1.0.0.0")]
 [assembly: AssemblyFileVersion("1.0.0.0")]
+[assembly: NeutralResourcesLanguageAttribute("es")]
+[assembly: GuidAttribute("7AC7ABE2-CF0B-4A7F-8A50-8BAD53D10578")]

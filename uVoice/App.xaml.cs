@@ -6,7 +6,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
 
-namespace UTAUdotNET
+namespace uVoice
 {
     /// <summary>
     /// Lógica de interacción para App.xaml

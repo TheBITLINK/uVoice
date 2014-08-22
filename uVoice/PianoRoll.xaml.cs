@@ -13,7 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace UTAUdotNET
+namespace uVoice
 {
     /// <summary>
     /// Lógica de interacción para PianoRoll.xaml

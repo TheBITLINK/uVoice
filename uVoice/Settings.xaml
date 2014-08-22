@@ -1,4 +1,4 @@
-﻿<UserControl x:Class="UTAUdotNET.Settings"
+﻿<UserControl x:Class="uVoice.Settings"
              xmlns:Controls="http://metro.mahapps.com/winfx/xaml/controls"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"

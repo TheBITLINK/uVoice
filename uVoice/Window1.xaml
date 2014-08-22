@@ -1,7 +1,7 @@
 ﻿<Window
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:local="clr-namespace:UTAUdotNET" x:Class="UTAUdotNET.Window1"
+        xmlns:local="clr-namespace:uVoice" x:Class="uVoice.Window1"
         Title="Window1" Height="582.3" Width="662">
     <Grid x:Name="Opciones">
         <Button x:Name="Archivos" Content="Archivo" HorizontalAlignment="Left" VerticalAlignment="Top" Width="100" Background="#FF1F247E" Height="25" BorderBrush="#FFA5D3E0" Foreground="#FF3790AA" Margin="3,1,2,0" FontFamily="AnticFont" FontSize="14"/>

@@ -1,7 +1,7 @@
 ﻿<Window
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:local="clr-namespace:UTAUdotNET" x:Class="UTAUdotNET.MainWindow"
+        xmlns:local="clr-namespace:uVoice" x:Class="uVoice.MainWindow"
         Title="UTAU.net" Background="Transparent" Height="600" Width="1024" MinWidth="1024" MinHeight="600" WindowStyle="None" Loaded="Window_Loaded" Icon="icon.ico">
     <Window.Resources>
         <Storyboard x:Name="ShowMenu" x:Key="SidemenuShow">

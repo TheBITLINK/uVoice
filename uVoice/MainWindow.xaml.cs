@@ -15,7 +15,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Windows.Threading;
 
-namespace UTAUdotNET
+namespace uVoice
 {
     /// <summary>
     /// Lógica de interacción para MainWindow.xaml

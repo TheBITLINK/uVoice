@@ -1,4 +1,4 @@
-UTAUdotNET
+uVoice
 ==========
 
-Remake For the UTAU software!
+Currently in development phase, uVoice will work as a Vocaloid / UTAU replacement...
