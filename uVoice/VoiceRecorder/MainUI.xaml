@@ -1,0 +1,87 @@
+﻿<UserControl
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:Custom="http://metro.mahapps.com/winfx/xaml/controls" xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit" xmlns:local="clr-namespace:uVoice.VoiceRecorder" x:Class="uVoice.VoiceRecorder.MainUI" 
+             mc:Ignorable="d" 
+             d:DesignHeight="600" d:DesignWidth="1024">
+    <Grid>
+
+        <UserControl>
+            <Grid Background="#FF111111">
+                <Grid Margin="0,32,0,0" Background="#FF333333">
+                    <TabControl Margin="0">
+                        <TabItem Header="Grabaciones">
+                            <Grid>
+
+                                <local:RecorderCore Margin="143,10,10,10" Width="Auto"/>
+
+                                <ListBox x:Name="RLB" Width="128" Margin="10,10,0,10" HorizontalAlignment="Left"/>
+                                <Menu Margin="0,20,20,0" HorizontalAlignment="Right" VerticalAlignment="Top" Width="32" Foreground="#CCFFFFFF" Height="32" Padding="0" Background="#00252525">
+                                    <MenuItem Width="32" Height="32" HorizontalAlignment="Center" VerticalAlignment="Center" Padding="0" HorizontalContentAlignment="Center">
+                                        <MenuItem.Header>
+                                            <Rectangle Fill="White" Margin="0" RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Left" VerticalAlignment="Top" Width="32" Height="32">
+                                                <Rectangle.RenderTransform>
+                                                    <TransformGroup>
+                                                        <ScaleTransform ScaleX="-1"/>
+                                                        <SkewTransform/>
+                                                        <RotateTransform/>
+                                                        <TranslateTransform/>
+                                                    </TransformGroup>
+                                                </Rectangle.RenderTransform>
+                                                <Rectangle.OpacityMask>
+                                                    <VisualBrush Visual="{StaticResource appbar_settings}" />
+                                                </Rectangle.OpacityMask>
+                                            </Rectangle>
+                                        </MenuItem.Header>
+                                        <MenuItem Header="Activar Reconocimiento de Voz" IsCheckable="True"/>
+                                        <MenuItem Header="RecList">
+                                            <MenuItem x:Name="JPrCV" Header="[CV] Japonés (Romanizado)" Click="All_Click"/>
+                                            <MenuItem x:Name="JPCV" Header="[CV] Japonés" Click="All_Click"/>
+                                            <MenuItem x:Name="ENCV" Header="[CV] Inglés" Click="All_Click"/>
+                                            <MenuItem x:Name="ESCV" Header="[CV] Español" Click="All_Click"/>
+                                            <MenuItem x:Name="JPrVCV" Header="[VCV] Japonés (Romanizado)" Click="All_Click"/>
+                                            <MenuItem x:Name="JPVCV" Header="[VCV] Japonés" Click="All_Click"/>
+                                            <MenuItem x:Name="ENVCV" Header="[VCV] Inglés" Click="All_Click"/>
+                                            <MenuItem x:Name="ESVCV" Header="[VCV] Español" Click="All_Click"/>
+                                            <MenuItem x:Name="CUSTOMRL" Header="Personalizada..." Click="All_Click"/>
+                                        </MenuItem>
+                                    </MenuItem>
+                                </Menu>
+                            </Grid>
+                        </TabItem>
+                        <TabItem Header="Información">
+                            <Grid/>
+                        </TabItem>
+                        <TabItem Header="Assets">
+                            <Grid Background="#00000000">
+                                <Custom:ToggleSwitch HorizontalAlignment="Left" VerticalAlignment="Top" Margin="26,45,0,0" Width="106" IsChecked="True"/>
+                                <Label Content="Ventana Principal Transparente" HorizontalAlignment="Left" Height="30" Margin="10,10,0,0" VerticalAlignment="Top" Width="291" FontSize="16"/>
+                                <Label Content="Desactivar Transparencia al Maximizar" HorizontalAlignment="Left" Height="30" Margin="10,75,0,0" VerticalAlignment="Top" Width="291" FontSize="16"/>
+                                <Custom:ToggleSwitch HorizontalAlignment="Left" VerticalAlignment="Top" Margin="26,110,0,0" Width="106" IsChecked="True"/>
+                                <Label Content="Color de fondo" HorizontalAlignment="Left" Height="30" Margin="10,140,0,0" VerticalAlignment="Top" Width="291" FontSize="16"/>
+                                <xctk:ColorCanvas Margin="10,175,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="235" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="Black" SelectedColor="#FF333333" Height="142"/>
+                                <Label Content="Color Primario" HorizontalAlignment="Left" Height="30" Margin="10,322,0,0" VerticalAlignment="Top" Width="291" FontSize="16"/>
+                                <xctk:ColorCanvas Margin="10,357,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="235" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="Black" SelectedColor="{DynamicResource AccentColor}" Height="142"/>
+                                <Grid Margin="311,45,5,78" Width="702" Background="#FF111111">
+                                    <Button Content="Cambiar" HorizontalAlignment="Left" Height="29" Margin="0,0,620,0" VerticalAlignment="Bottom" Width="82"/>
+                                </Grid>
+                                <Label Content="Imagen de del editor" HorizontalAlignment="Left" Height="43" Margin="306,10,0,0" VerticalAlignment="Top" Width="291" FontSize="16"/>
+                                <Custom:ToggleSwitch HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="323,0,0,10" Width="106"/>
+                                <Label Content="Ignorar archivo de fondo en Voice Banks y usar siempre el mio." HorizontalAlignment="Left" Height="33" Margin="306,0,0,40" VerticalAlignment="Bottom" Width="702" FontSize="16"/>
+                            </Grid>
+                        </TabItem>
+                        <TabItem Header="Misc.">
+                            <Grid/>
+                        </TabItem>
+                    </TabControl>
+                </Grid>
+                <Button Content="&lt; Cancelar" HorizontalAlignment="Left" Height="32" VerticalAlignment="Top" Width="90" Click="Button_Click"/>
+                <Label Content="Editar Voz ({Voice_Name})" Height="32" Margin="95,0,94,0" VerticalAlignment="Top" FontSize="16" VerticalContentAlignment="Center" MouseDown="Label_MouseDown"/>
+                <Button Content="Guardar" HorizontalAlignment="Right" Height="32" VerticalAlignment="Top" Width="89"/>
+            </Grid>
+        </UserControl>
+
+    </Grid>
+</UserControl>

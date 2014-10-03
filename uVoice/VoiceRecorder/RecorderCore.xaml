@@ -1,0 +1,53 @@
+﻿<UserControl
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:Nau="clr-namespace:NAudio.Gui;assembly=NAudio"
+             xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit" x:Name="userControl" x:Class="uVoice.VoiceRecorder.RecorderCore"
+             mc:Ignorable="d"
+             d:DesignHeight="480" d:DesignWidth="720">
+    <Grid Background="#FF333333">
+        <Button x:Name="helpbtn" Style="{DynamicResource SquareButtonStyle}" HorizontalAlignment="Right" Height="39" Margin="0,0,10,10" VerticalAlignment="Bottom" Width="44" IsDefault="True" Padding="0" MouseDown="helpbtn_MouseDown" MouseUp="helpbtn_MouseUp" MouseLeave="helpbtn_MouseLeave">
+            <Rectangle Fill="White" Width="8" Height="16">
+                <Rectangle.OpacityMask>
+                    <VisualBrush Visual="{StaticResource appbar_question}"/>
+                </Rectangle.OpacityMask>
+            </Rectangle>
+        </Button>
+        <ProgressBar VerticalAlignment="Top" Maximum="300"/>
+        <Label Content="0s" HorizontalAlignment="Left" Margin="10,15,0,0" VerticalAlignment="Top" FontSize="22" UseLayoutRounding="True"/>
+        <Grid x:Name="viewer" Height="186" Margin="0,59,0,0" VerticalAlignment="Top" Background="Black">
+            <WindowsFormsHost Margin="0" Background="Black">
+                <Nau:WaveViewer x:Name="waveView" AutoSize="True" AutoSizeMode="GrowAndShrink" Dock="Fill" Enabled="True" Visible="True"/>
+            </WindowsFormsHost>
+        </Grid>
+        <Grid Margin="0,245,0,0">
+            <Button Style="{DynamicResource SquareButtonStyle}" Content="Mantén Pulsado para grabar" HorizontalAlignment="Center" Height="84" Margin="0" VerticalAlignment="Center" Width="212"/>
+            <Label Content="Nota: Por los momentos, no podrás ver los gráficos de ondas mientras grabas. Adicionalmente, si grabas sobre un archivo existente, el original será reemplazado" HorizontalAlignment="Left" Margin="0" VerticalAlignment="Bottom" FontSize="8"/>
+            <Button Style="{DynamicResource SquareButtonStyle}" Content="Reproducir" HorizontalAlignment="Center" Height="28" Margin="0,122,0,0" VerticalAlignment="Center" Width="83" IsEnabled="False"/>
+            <Grid Height="32" Margin="0" VerticalAlignment="Top" Background="#FF222222">
+                <ComboBox x:Name="cm" ItemsSource="{Binding ElementName=userControl, Path=CaptureDevices}" SelectedItem="{Binding ElementName=userControl, Path=SelectedDevice, Mode=TwoWay}" HorizontalAlignment="Left" Margin="32,3,0,3" VerticalAlignment="Center" Width="236"/>
+                <Rectangle Fill="White" HorizontalAlignment="Left" Height="24" Margin="10,0,0,0" Width="12">
+                    <Rectangle.OpacityMask>
+                        <VisualBrush Visual="{StaticResource appbar_microphone}"/>
+                    </Rectangle.OpacityMask>
+                </Rectangle>
+            </Grid>
+        </Grid>
+        <Grid x:Name="kbhelp" Background="Black" Visibility="Hidden">
+            <Grid Height="273" Margin="0" Width="700">
+                <Image Source="/uVoice;component/Resources/kb.png"/>
+                <Label Content="Grabar (Mantener oprimido)&#xA;(Si ya existe una grabación se sobre-escribe)" HorizontalAlignment="Left" Margin="180,187,0,0" VerticalAlignment="Top" Height="44" Width="343" HorizontalContentAlignment="Center"/>
+                <Rectangle Fill="Black" HorizontalAlignment="Left" Height="27" Margin="0,231,0,0" VerticalAlignment="Top" Width="316"/>
+                <Label Content="Reproducir" HorizontalAlignment="Left" Margin="178,138,0,0" VerticalAlignment="Top" Height="44" Width="52" HorizontalContentAlignment="Center" FontSize="8"/>
+                <Label Content="Siguiente" HorizontalAlignment="Left" Margin="236,138,0,0" VerticalAlignment="Top" Height="44" Width="52" HorizontalContentAlignment="Center" FontSize="8"/>
+                <Label Content="R. de voz" HorizontalAlignment="Left" Margin="18,88,0,0" VerticalAlignment="Top" Height="44" Width="52" HorizontalContentAlignment="Center" FontSize="8"/>
+                <Label Content="Borrar Grabación" HorizontalAlignment="Left" Margin="587,38,0,0" VerticalAlignment="Top" Height="44" Width="110" HorizontalContentAlignment="Center" FontSize="8"/>
+                <Rectangle Fill="Black" HorizontalAlignment="Left" Height="27" Margin="0,11,0,0" VerticalAlignment="Top" Width="700"/>
+            </Grid>
+            <Label Content="Atajos de teclado" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" FontSize="36"/>
+        </Grid>
+        <Grid x:Name="bnol" HorizontalAlignment="Right" Height="39" Margin="0,0,10,10" VerticalAlignment="Bottom" Width="44" Background="#00000000" MouseDown="helpbtn_MouseDown" MouseUp="helpbtn_MouseUp" MouseLeave="helpbtn_MouseLeave" MouseEnter="bnol_MouseEnter"/>
+    </Grid>
+</UserControl>

@@ -1,7 +1,7 @@
 ﻿<Window
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:local="clr-namespace:uVoice" x:Class="uVoice.MainWindow"
+        xmlns:local="clr-namespace:uVoice" xmlns:VoiceRecorder="clr-namespace:uVoice.VoiceRecorder" x:Class="uVoice.MainWindow"
         Title="UTAU.net" Background="Transparent" Height="600" Width="1024" MinWidth="1024" MinHeight="600" WindowStyle="None" Loaded="Window_Loaded" Icon="icon.ico">
     <Window.Resources>
         <Storyboard x:Name="ShowMenu" x:Key="SidemenuShow">
@@ -140,7 +140,7 @@
             </Grid>
             <Grid x:Name="grid1" Background="#BF000000" MouseUp="grid1_MouseUp" Visibility="Hidden" Opacity="0">
                 <Grid HorizontalAlignment="Right" Height="110" Margin="0,39,10,0" VerticalAlignment="Top" Width="245">
-                    <Rectangle Stroke="White" Fill="#3FFFFFFF" RadiusX="5" RadiusY="5"></Rectangle>
+                    <Rectangle Stroke="White" Fill="#3FFFFFFF" RadiusX="5" RadiusY="5"/>
                     <Label Content="Estadísticas del Proyecto" Margin="10" VerticalAlignment="Top" FontSize="14"/>
                     <Label Content="Tiempo Total: 0:00:00" Margin="10,44,10,0" VerticalAlignment="Top" Height="26"/>
                     <Label Content="Silabas/Notas Totales: 0" Margin="10,70,10,0" VerticalAlignment="Top" Height="26"/>
@@ -162,6 +162,8 @@
         </Button>
         <Button x:Name="minimize" Content="_" HorizontalAlignment="Right" Height="32" Margin="0,0,64,0" VerticalAlignment="Top" Width="32" IsCancel="True" Click="minimize_Click"/>
         <local:Settings x:Name="settings" Margin="0" Visibility="Hidden"/>
+        <VoiceRecorder:MainUI/>
+        <local:DialogLayer x:FieldModifier="public" x:Name="dialogLayer" Margin="0"/>
 
     </Grid>
 </Window>

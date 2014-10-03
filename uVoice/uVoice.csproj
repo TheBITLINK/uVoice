@@ -74,9 +74,11 @@
     <Reference Include="System.Xaml">
       <RequiredTargetFramework>4.0</RequiredTargetFramework>
     </Reference>
+    <Reference Include="UIAutomationProvider" />
     <Reference Include="WindowsBase" />
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
+    <Reference Include="WindowsFormsIntegration" />
     <Reference Include="Xceed.Wpf.AvalonDock">
       <HintPath>..\packages\Extended.Wpf.Toolkit.2.2.1\lib\net40\Xceed.Wpf.AvalonDock.dll</HintPath>
     </Reference>
@@ -101,6 +103,12 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="DialogLayer.xaml.cs">
+      <DependentUpon>DialogLayer.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Meta\ErrDialog.xaml.cs">
+      <DependentUpon>ErrDialog.xaml</DependentUpon>
+    </Compile>
     <Compile Include="PianoRoll.xaml.cs">
       <DependentUpon>PianoRoll.xaml</DependentUpon>
     </Compile>
@@ -110,10 +118,29 @@
     <Compile Include="SideMenu.xaml.cs">
       <DependentUpon>SideMenu.xaml</DependentUpon>
     </Compile>
+    <Compile Include="TestArena.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="TestArena.Designer.cs">
+      <DependentUpon>TestArena.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VoiceRecorder\DefRL\VCV.cs" />
+    <Compile Include="VoiceRecorder\DefRL\CV.cs" />
+    <Compile Include="VoiceRecorder\MainUI.xaml.cs">
+      <DependentUpon>MainUI.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="VoiceRecorder\RecListHelper.cs" />
+    <Compile Include="VoiceRecorder\RecorderCore.xaml.cs">
+      <DependentUpon>RecorderCore.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Window1.xaml.cs">
       <DependentUpon>Window1.xaml</DependentUpon>
     </Compile>
     <Compile Include="WindowGraphics.cs" />
+    <Page Include="DialogLayer.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -126,6 +153,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Meta\ErrDialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="PianoRoll.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -139,6 +170,14 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="SideMenu.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="VoiceRecorder\MainUI.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="VoiceRecorder\RecorderCore.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -165,6 +204,9 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="TestArena.resx">
+      <DependentUpon>TestArena.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -189,6 +231,7 @@
     <Content Include="libmp3lame.64.dll">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Resource Include="Resources\kb.png" />
     <Resource Include="Resources\oc.png" />
     <Resource Include="Resources\logo_nobg.png" />
     <Resource Include="icon.ico" />

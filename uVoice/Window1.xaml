@@ -11,9 +11,6 @@
         <Button x:Name="Opciones1" Content="Opciones" HorizontalAlignment="Left" VerticalAlignment="Top" Width="100" Background="#FF1F247E" Height="25" BorderBrush="#FFA5D3E0" Foreground="#FF3790AA" Margin="303,1,0,0" FontFamily="AnticFont" FontSize="14"/>
         <Button x:Name="Plugins" Content="Plugins" HorizontalAlignment="Left" VerticalAlignment="Top" Width="100" Background="#FF1F247E" Height="25" Click="Archivos_Click" BorderBrush="#FFA5D3E0" Foreground="#FF3790AA" Margin="503,1,0,0" FontFamily="AnticFont" FontSize="14"/>
         <Button Content="" HorizontalAlignment="Left" Margin="10,31,0,0" VerticalAlignment="Top" Width="62" Background="#FF1555B2" Height="58">
-            <Button.OpacityMask>
-                <ImageBrush ImageSource="Resources/playfome.png"/>
-            </Button.OpacityMask>
         </Button>
 
 
