@@ -207,6 +207,9 @@
     <EmbeddedResource Include="TestArena.resx">
       <DependentUpon>TestArena.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="Meta\microVoice.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -225,6 +228,9 @@
     <Resource Include="Resources\Entypo-license.txt" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="CoreData\uvb\meta\{DD4EAD53-C5EB-4C10-8FAA-49D79A6CAFC2}\meta.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <Content Include="libmp3lame.32.dll">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -236,6 +242,9 @@
     <Resource Include="Resources\logo_nobg.png" />
     <Resource Include="icon.ico" />
     <Resource Include="Resources\logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="CoreData\uvb\stream\{DD4EAD53-C5EB-4C10-8FAA-49D79A6CAFC2}\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

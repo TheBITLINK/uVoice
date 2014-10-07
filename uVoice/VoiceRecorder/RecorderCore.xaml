@@ -19,15 +19,15 @@
         <Label Content="0s" HorizontalAlignment="Left" Margin="10,15,0,0" VerticalAlignment="Top" FontSize="22" UseLayoutRounding="True"/>
         <Grid x:Name="viewer" Height="186" Margin="0,59,0,0" VerticalAlignment="Top" Background="Black">
             <WindowsFormsHost Margin="0" Background="Black">
-                <Nau:WaveViewer x:Name="waveView" AutoSize="True" AutoSizeMode="GrowAndShrink" Dock="Fill" Enabled="True" Visible="True"/>
+                <Nau:WaveViewer x:Name="waveView" AutoSize="True" AutoSizeMode="GrowAndShrink" Dock="Fill" Enabled="True" Visible="True" BackColor="White"/>
             </WindowsFormsHost>
         </Grid>
         <Grid Margin="0,245,0,0">
-            <Button Style="{DynamicResource SquareButtonStyle}" Content="Mantén Pulsado para grabar" HorizontalAlignment="Center" Height="84" Margin="0" VerticalAlignment="Center" Width="212"/>
+            <Button Style="{DynamicResource SquareButtonStyle}" Content="Mantén Pulsado para grabar" HorizontalAlignment="Center" Height="84" Margin="0" VerticalAlignment="Center" Width="212" MouseDown="Button_MouseDown" MouseUp="Button_MouseUp"/>
             <Label Content="Nota: Por los momentos, no podrás ver los gráficos de ondas mientras grabas. Adicionalmente, si grabas sobre un archivo existente, el original será reemplazado" HorizontalAlignment="Left" Margin="0" VerticalAlignment="Bottom" FontSize="8"/>
-            <Button Style="{DynamicResource SquareButtonStyle}" Content="Reproducir" HorizontalAlignment="Center" Height="28" Margin="0,122,0,0" VerticalAlignment="Center" Width="83" IsEnabled="False"/>
+            <Button x:Name="playfl" Style="{DynamicResource SquareButtonStyle}" Content="Reproducir" HorizontalAlignment="Center" Height="28" Margin="0,122,0,0" VerticalAlignment="Center" Width="83" IsEnabled="False" Click="Button_Click"/>
             <Grid Height="32" Margin="0" VerticalAlignment="Top" Background="#FF222222">
-                <ComboBox x:Name="cm" ItemsSource="{Binding ElementName=userControl, Path=CaptureDevices}" SelectedItem="{Binding ElementName=userControl, Path=SelectedDevice, Mode=TwoWay}" HorizontalAlignment="Left" Margin="32,3,0,3" VerticalAlignment="Center" Width="236"/>
+                <ComboBox x:Name="cm" ItemsSource="{Binding ElementName=userControl, Path=CaptureDevices}" SelectedItem="{Binding ElementName=userControl, Path=SelectedDevice, Mode=TwoWay}" HorizontalAlignment="Left" Margin="32,3,0,3" VerticalAlignment="Center" Width="236" IsEnabled="False"/>
                 <Rectangle Fill="White" HorizontalAlignment="Left" Height="24" Margin="10,0,0,0" Width="12">
                     <Rectangle.OpacityMask>
                         <VisualBrush Visual="{StaticResource appbar_microphone}"/>

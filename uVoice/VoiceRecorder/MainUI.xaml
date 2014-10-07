@@ -15,9 +15,11 @@
                         <TabItem Header="Grabaciones">
                             <Grid>
 
-                                <local:RecorderCore Margin="143,10,10,10" Width="Auto"/>
+                                <Grid Margin="143,10,10,10" x:Name="CoreContainer">
+                                    
+                                </Grid>
 
-                                <ListBox x:Name="RLB" Width="128" Margin="10,10,0,10" HorizontalAlignment="Left"/>
+                                <ListBox x:Name="RLB" Width="128" Margin="10,10,0,10" HorizontalAlignment="Left" SelectionChanged="RLB_SelectionChanged"/>
                                 <Menu Margin="0,20,20,0" HorizontalAlignment="Right" VerticalAlignment="Top" Width="32" Foreground="#CCFFFFFF" Height="32" Padding="0" Background="#00252525">
                                     <MenuItem Width="32" Height="32" HorizontalAlignment="Center" VerticalAlignment="Center" Padding="0" HorizontalContentAlignment="Center">
                                         <MenuItem.Header>

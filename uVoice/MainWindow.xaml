@@ -88,7 +88,7 @@
                 </Label>
             </Grid>
             <Grid x:Name="controlarea" Margin="0,32,0,0">
-                <local:PianoRoll Margin="0,46,0,0" VerticalAlignment="Top" Background="#FF333333"/>
+                <local:PianoRoll x:Name="mainpiano" Margin="0,46,0,0" Background="#FF333333" RenderTransformOrigin="0.5,0.5"/>
                 <WrapPanel Height="31" Margin="10,10,0,0" VerticalAlignment="Top">
                     <Button x:Name="select" Content="" Background="{DynamicResource AccentColorBrush}" Width="14" Height="24" Margin="10,0,0,0">
                         <Button.OpacityMask>
@@ -163,7 +163,7 @@
         <Button x:Name="minimize" Content="_" HorizontalAlignment="Right" Height="32" Margin="0,0,64,0" VerticalAlignment="Top" Width="32" IsCancel="True" Click="minimize_Click"/>
         <local:Settings x:Name="settings" Margin="0" Visibility="Hidden"/>
         <VoiceRecorder:MainUI/>
-        <local:DialogLayer x:FieldModifier="public" x:Name="dialogLayer" Margin="0"/>
+        <local:DialogLayer x:FieldModifier="public" x:Name="dialogLayer" Margin="0" Visibility="Hidden"/>
 
     </Grid>
 </Window>

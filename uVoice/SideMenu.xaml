@@ -16,15 +16,13 @@
             <Label Content="VOICE BANK" VerticalAlignment="Top" FontSize="22" Background="#FF111111"/>
         </Grid>
         <ListBox x:Name="mainlb" Margin="0,128,0,0" Background="#FF111111" SelectionChanged="ListBox_SelectionChanged">
-            <ListBoxItem Content="           Nuevo Proyecto" FontSize="18" Height="48"/>
-            <ListBoxItem Content="           Abrir..." FontSize="18" Height="48"/>
-            <ListBoxItem Content="           Guardar" FontSize="18" Height="48"/>
-            <ListBoxItem Content="           Guardar Como" FontSize="18" Height="48"/>
-            <ListBoxItem Content="           Append" FontSize="18" Height="48"/>
-            <ListBoxItem Content="           Importar" FontSize="18" Height="48"/>
-            <ListBoxItem Content="           Exportar" FontSize="18" Height="48"/>
-            <ListBoxItem Content="           Ventana de TL" FontSize="18" Height="48" MouseUp="ListBoxItem_MouseUp"/>
-            <ListBoxItem Content="           Salir" FontSize="18" Height="48" MouseUp="ListBoxItem_MouseUp_1"/>
+            <ListBoxItem x:Name="op_new" x:FieldModifier="public" Content="           Nuevo Proyecto" FontSize="18" Height="48"/>
+            <ListBoxItem x:Name="op_open" x:FieldModifier="public" Content="           Abrir..." FontSize="18" Height="48"/>
+            <ListBoxItem x:Name="op_save" x:FieldModifier="public" Content="           Guardar" FontSize="18" Height="48"/>
+            <ListBoxItem x:Name="op_saveas" x:FieldModifier="public" Content="           Guardar Como" FontSize="18" Height="48"/>
+            <ListBoxItem x:Name="op_import" x:FieldModifier="public" Content="           Importar" FontSize="18" Height="48"/>
+            <ListBoxItem x:Name="op_export" x:FieldModifier="public" Content="           Exportar" FontSize="18" Height="48"/>
+            <ListBoxItem x:Name="op_exit" x:FieldModifier="public" Content="           Salir" FontSize="18" Height="48" MouseUp="ListBoxItem_MouseUp_1"/>
         </ListBox>
 
     </Grid>

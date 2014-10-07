@@ -11,10 +11,10 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
-using System.Windows.Shapes;
 using NAudio.CoreAudioApi;
 using NAudio.Wave;
 using System.Threading;
+using System.IO;
 
 namespace uVoice.VoiceRecorder
 {
@@ -23,22 +23,19 @@ namespace uVoice.VoiceRecorder
     /// </summary>
     public partial class RecorderCore : UserControl
     {
+        int sampleRate = 22000;
+        int channels = 1;
+        WaveIn waveIn;
+        string currentFileName;
+        public FileInfo currentfile;
+        IWavePlayer waveOutDevice;
+        AudioFileReader audioFileReader;
         private MMDevice selectedDevice;
-        private int sampleRate;
-        private int bitDepth;
-        private int channelCount;
-        private int sampleTypeIndex;
-        private WasapiCapture capture;
-        private WaveFileWriter writer;
-        private string currentFileName;
-        private string message;
-        private float peak;
-        private readonly SynchronizationContext synchronizationContext;
-        private float recordLevel;
-        private int shareModeIndex;
+        WaveFileWriter writer;
+        DirectoryInfo cachefld;
+        string cachefldn;
 
         public IEnumerable<MMDevice> CaptureDevices { get; private set; }
-
         public MMDevice SelectedDevice
         {
             get
@@ -53,15 +50,62 @@ namespace uVoice.VoiceRecorder
             }
         }
 
-        public RecorderCore()
+        public void Play()
         {
+            waveOutDevice = new WaveOut();
+            audioFileReader = new AudioFileReader(cachefldn);
+            waveOutDevice.Init(audioFileReader);
+            waveOutDevice.PlaybackStopped += waveOutDevice_PlaybackStopped;
+            waveOutDevice.Play();
+        }
+
+        void waveOutDevice_PlaybackStopped(object sender, StoppedEventArgs e)
+        {
+            if (waveOutDevice != null)
+            {
+                waveOutDevice.Stop();
+            }
+            if (waveOutDevice != null)
+            {
+                waveOutDevice.Dispose();
+                waveOutDevice = null;
+            }
+        }
+
+        void waveIn_DataAvailable(object sender, WaveInEventArgs e)
+        {
+            writer.WriteData(e.Buffer, 0, e.BytesRecorded);
+        }
+
+
+        public RecorderCore(string fni)
+        {
+            currentFileName = fni;
+            currentfile = new FileInfo(fni);
             MMDeviceEnumerator deviceEnumerator = new MMDeviceEnumerator();
             this.CaptureDevices = (IEnumerable<MMDevice>)Enumerable.ToArray<MMDevice>((IEnumerable<MMDevice>)deviceEnumerator.EnumerateAudioEndPoints(DataFlow.Capture, DeviceState.Active));
             MMDevice defaultDevice = deviceEnumerator.GetDefaultAudioEndpoint(DataFlow.Capture, Role.Console);
             this.SelectedDevice = Enumerable.FirstOrDefault<MMDevice>(this.CaptureDevices, (Func<MMDevice, bool>)(c => c.ID == defaultDevice.ID));
-            //cm.ItemsSource = CaptureDevices;
-            //cm.SelectedItem = defaultDevice;
             InitializeComponent();
+            CheckExistence();
+        }
+
+        void CheckExistence()
+        {
+            if (currentfile.Exists)
+            {
+                Random rd = new Random();
+                cachefld = new DirectoryInfo(currentfile.Directory.Parent.Parent.Parent.FullName + "\\cache\\" + currentfile.Directory.Name);
+                if (!cachefld.Exists)
+                {
+                    cachefld.Create();
+                }
+                cachefldn = currentfile.Directory.Parent.Parent.Parent.FullName + "\\cache\\" + currentfile.Directory.Name + "\\uvb" + rd.Next(10000);
+                currentfile.CopyTo(cachefldn, true);
+                waveView.WaveStream = new NAudio.Wave.WaveFileReader(cachefldn);
+                waveView.Update();
+                playfl.IsEnabled = true;
+            }       
         }
 
         private void helpbtn_MouseDown(object sender, MouseButtonEventArgs e)
@@ -88,6 +132,54 @@ namespace uVoice.VoiceRecorder
             bnol.Background = Brushes.White;
             kbhelp.Visibility = System.Windows.Visibility.Visible;
             viewer.Visibility = System.Windows.Visibility.Hidden;
+        }
+
+        bool recording = false;
+
+        void TryRecord()
+        {
+            if (currentfile.Exists)
+            {
+                currentfile.Delete();
+            }
+            if (!recording)
+            {
+                waveIn = new WaveIn();
+                waveIn.WaveFormat = new WaveFormat(sampleRate, channels);
+                waveIn.DeviceNumber = 0;
+                waveIn.DataAvailable += new EventHandler<WaveInEventArgs>(
+                    waveIn_DataAvailable);
+                writer = new WaveFileWriter(currentfile.FullName, waveIn.WaveFormat);
+                waveIn.StartRecording();
+                recording = true;
+            }
+        }
+
+        void TryStop()
+        {
+            if(recording)
+            {
+                waveIn.StopRecording();
+                waveIn.Dispose();
+                writer.Close();
+                recording = false;
+            }
+            CheckExistence();
+        }
+
+        private void Button_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            TryRecord();
+        }
+
+        private void Button_MouseUp(object sender, MouseButtonEventArgs e)
+        {
+            TryStop();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            Play();
         }
     }
 }

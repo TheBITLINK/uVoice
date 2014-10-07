@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<microVoice>
+  <metadata type="voiceMeta">
+    <GUID>{DD4EAD53-C5EB-4C10-8FAA-49D79A6CAFC2}</GUID>
+    <common>
+      <VoiceName></VoiceName>
+      <VoiceAuthor></VoiceAuthor>
+      <VoiceDescription>
+        
+      </VoiceDescription>
+      <VoiceFormat>wav</VoiceFormat>
+      <VoiceCopyright></VoiceCopyright>
+      <VoiceLink></VoiceLink>
+    </common>
+    <assets>
+      <character>
+        <thumbnail></thumbnail>
+        <background></background>
+        <fullbody></fullbody>
+      </character>
+    </assets>
+    <DRM>
+      <protected>false</protected>
+      <GalleryUri>http://uvoice.thebit.link/gal/voices/</GalleryUri>
+      <Extended>
+        <Company></Company>
+        <LicenceFile></LicenceFile>
+        <requirePurchase>false</requirePurchase>
+        <GalPurLic>http://uvoice.thebit.link/gal/voices/commercial/licences/DD4EAD53-C5EB-4C10-8FAA-49D79A6CAFC2/data.xml</GalPurLic>
+      </Extended>
+    </DRM>
+    <Setting>
+      <files>
+        <file name="a.wav" exist="true">
+          <oto>‚ ,67,3,510,0,38</oto>
+        </file>
+      </files>
+      <aliasses>
+        
+      </aliasses>
+    </Setting>
+  </metadata>
+</microVoice>

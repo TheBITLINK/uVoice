@@ -11,7 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
-using System.Windows.Shapes;
+using System.IO;
 
 namespace uVoice.VoiceRecorder
 {
@@ -20,12 +20,19 @@ namespace uVoice.VoiceRecorder
     /// </summary>
     public partial class MainUI : UserControl
     {
+        public string currentfolder { get; set; }
+        public string GUID { get; set; }
+
+        public string RecordFolder { get; set; }
         public MainUI()
         {
+            GUID = "{DD4EAD53-C5EB-4C10-8FAA-49D79A6CAFC2}";
             InitializeComponent();
             RecListHelper rlh = new RecListHelper(RLB);
             rlh.LoadRLArray(DefRL.CV.JapanaseR);
             JPrCV.IsChecked = true;
+            currentfolder = Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location);
+            RecordFolder = currentfolder + "\\CoreData\\uvb\\stream\\" + GUID;
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -113,6 +120,15 @@ namespace uVoice.VoiceRecorder
                     };
                     break;
             }
+        }
+
+        private void RLB_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            ListBoxItem lBi = (ListBoxItem)RLB.SelectedItem;
+            string fn = (string)lBi.Content;
+            RecorderCore rC = new RecorderCore(RecordFolder + "\\" + fn + ".wav");
+            CoreContainer.Children.Clear();
+            CoreContainer.Children.Add(rC);
         }
     }
 }

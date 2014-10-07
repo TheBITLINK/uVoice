@@ -14,6 +14,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Windows.Threading;
+using System.IO;
 
 namespace uVoice
 {
@@ -33,6 +34,20 @@ namespace uVoice
             Clicked = false;
             DoubleClickCount.Interval = TimeSpan.FromMilliseconds(200);
             DoubleClickCount.Tick += DoubleClickCount_Tick;
+            sideMenu.op_open.MouseUp += op_open_MouseUp;
+            DirectoryInfo cache = new DirectoryInfo(System.IO.Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location) + "\\CoreData\\cache");
+            cache.Delete(true);
+        }
+
+        System.Windows.Forms.OpenFileDialog opf = new System.Windows.Forms.OpenFileDialog();
+
+        void op_open_MouseUp(object sender, MouseButtonEventArgs e)
+        {
+            opf.ShowDialog();
+            controlarea.Children.Remove(mainpiano);
+            mainpiano = new PianoRoll(opf.FileName);
+            mainpiano.Margin = new Thickness(0, 46, 0, 0);
+            mainpiano.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#FF333333"));
         }
 
         void DoubleClickCount_Tick(object sender, EventArgs e)
