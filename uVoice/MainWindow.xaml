@@ -48,25 +48,13 @@
     <Grid>
         <Grid x:Name="grid">
             <Grid x:Name="titlebar" Height="78" Margin="0" VerticalAlignment="Top" Background="#00000000" MouseDown="Grid_MouseDown">
-                <Button HorizontalAlignment="Left" Margin="0,-1,0,0" Height="32" VerticalAlignment="Top" Click="Button_Click" Padding="0" HorizontalContentAlignment="Left">
-                    <Button.Background>
-                        <ImageBrush ImageSource="Resources/oc.png">
-                            <ImageBrush.RelativeTransform>
-                                <TransformGroup>
-                                    <ScaleTransform CenterY="0.5" CenterX="0.5"/>
-                                    <SkewTransform CenterY="0.5" CenterX="0.5"/>
-                                    <RotateTransform CenterY="0.5" CenterX="0.5"/>
-                                    <TranslateTransform/>
-                                </TransformGroup>
-                            </ImageBrush.RelativeTransform>
-                        </ImageBrush>
-                    </Button.Background>
-                    <Grid>
-                        <Image HorizontalAlignment="Left" Width="24" Source="Resources/logo_nobg.png" VerticalAlignment="Center" Height="24" Margin="0"/>
-                        <Label Content="uVoice" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="24,0,0,0" FontSize="12"/>
+                <Button HorizontalAlignment="Left" Margin="0" Height="32" VerticalAlignment="Top" Click="Button_Click" Padding="0" HorizontalContentAlignment="Left" Background="{DynamicResource AccentColorBrush}">
+                    <Grid Height="32" Width="72">
+                        <Image HorizontalAlignment="Left" Source="Resources/logo_mask_sm.png" VerticalAlignment="Center" Margin="5,10,0,8" Stretch="None"/>
+                        <Label Content="µVoice" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="23,4,0,2" FontSize="12" FontFamily="/uVoice;component/Resources/#Comfortaa"/>
                     </Grid>
                 </Button>
-                <Menu x:Name="mainmenu" HorizontalAlignment="Left" Height="32" Margin="82,0,0,0" Background="#7FFFFFFF" VerticalAlignment="Top" BorderBrush="White" BorderThickness="1">
+                <Menu x:Name="mainmenu" HorizontalAlignment="Left" Height="32" Margin="108,0,0,0" Background="#7FFFFFFF" VerticalAlignment="Top" BorderBrush="White" BorderThickness="1" Foreground="Black">
                     <MenuItem Header="Editar">
                         <MenuItem Header="Deshacer"/>
                         <MenuItem Header="Rehacer"/>
@@ -83,9 +71,10 @@
                 </Menu>
                 <Label x:Name="projectnameblur" Content="Proyecto Nuevo (*)" Height="32" Margin="460,0,101,0" VerticalAlignment="Top" HorizontalContentAlignment="Right" FontSize="18">
                     <Label.Effect>
-                        <BlurEffect/>
+                        <BlurEffect Radius="10"/>
                     </Label.Effect>
                 </Label>
+                <Button Content="..." HorizontalAlignment="Left" Margin="72,0,0,0" VerticalAlignment="Top" Width="32" Height="32" FontWeight="Bold"/>
             </Grid>
             <Grid x:Name="controlarea" Margin="0,32,0,0">
                 <local:PianoRoll x:Name="mainpiano" Margin="0,46,0,0" Background="#FF333333" RenderTransformOrigin="0.5,0.5"/>
@@ -120,10 +109,10 @@
                     <Grid Height="30" Width="80" Margin="10,0,0,0">
                         <Label x:Name="time_glow" HorizontalAlignment="Left" VerticalAlignment="Top" Height="30" Width="80" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="18" Padding="0" Grid.IsSharedSizeScope="True" Content="0:00:00">
                             <Label.Effect>
-                                <BlurEffect/>
+                                <BlurEffect Radius="10"/>
                             </Label.Effect>
                         </Label>
-                        <Label x:Name="time" Content="0:00:00" HorizontalAlignment="Left" VerticalAlignment="Top" Height="30" Width="80" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="18" Padding="0" Grid.IsSharedSizeScope="True"/>
+                        <Label x:Name="time" Content="0:00:00" HorizontalAlignment="Left" VerticalAlignment="Top" Height="30" Width="80" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="18" Padding="0" Grid.IsSharedSizeScope="True" Foreground="Black"/>
                     </Grid>
                     <Button x:Name="ff" Content="" Width="24" Height="24" Margin="10,0,0,0">
                         <Button.OpacityMask>
@@ -140,7 +129,7 @@
             </Grid>
             <Grid x:Name="grid1" Background="#BF000000" MouseUp="grid1_MouseUp" Visibility="Hidden" Opacity="0">
                 <Grid HorizontalAlignment="Right" Height="110" Margin="0,39,10,0" VerticalAlignment="Top" Width="245">
-                    <Rectangle Stroke="White" Fill="#3FFFFFFF" RadiusX="5" RadiusY="5"/>
+                    <Rectangle Stroke="White" Fill="#3FFFFFFF"/>
                     <Label Content="Estadísticas del Proyecto" Margin="10" VerticalAlignment="Top" FontSize="14"/>
                     <Label Content="Tiempo Total: 0:00:00" Margin="10,44,10,0" VerticalAlignment="Top" Height="26"/>
                     <Label Content="Silabas/Notas Totales: 0" Margin="10,70,10,0" VerticalAlignment="Top" Height="26"/>
@@ -153,7 +142,7 @@
             </local:SideMenu.Background>
         </local:SideMenu>
         <Button x:Name="close" Content="X" HorizontalAlignment="Right" Height="32" Margin="0" VerticalAlignment="Top" Width="32" IsCancel="True" Background="#FF800B0B" Foreground="White" Click="close_Click"/>
-        <Label x:Name="projectname" Content="Proyecto Nuevo (*)" Height="32" Margin="396,0,101,0" VerticalAlignment="Top" HorizontalContentAlignment="Right" FontSize="18" MouseDown="projectname_MouseDown"/>
+        <Label x:Name="projectname" Content="Proyecto Nuevo (*)" Height="32" Margin="460,0,101,0" VerticalAlignment="Top" HorizontalContentAlignment="Right" FontSize="18" MouseDown="projectname_MouseDown" Foreground="Black"/>
         <Button x:Name="maxres" HorizontalAlignment="Right" Height="32" Margin="0,0,32,0" VerticalAlignment="Top" Width="32" IsCancel="True" Padding="0" Click="maxres_Click">
             <Grid>
                 <Rectangle Width="11" Height="10" HorizontalAlignment="Center" VerticalAlignment="Center" Stroke="{Binding Foreground, ElementName=maxres}"/>
@@ -162,7 +151,7 @@
         </Button>
         <Button x:Name="minimize" Content="_" HorizontalAlignment="Right" Height="32" Margin="0,0,64,0" VerticalAlignment="Top" Width="32" IsCancel="True" Click="minimize_Click"/>
         <local:Settings x:Name="settings" Margin="0" Visibility="Hidden"/>
-        <VoiceRecorder:MainUI/>
+        <VoiceRecorder:MainUI Visibility="Hidden"/>
         <local:DialogLayer x:FieldModifier="public" x:Name="dialogLayer" Margin="0" Visibility="Hidden"/>
 
     </Grid>

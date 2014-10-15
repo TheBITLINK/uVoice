@@ -36,7 +36,21 @@ namespace uVoice
             DoubleClickCount.Tick += DoubleClickCount_Tick;
             sideMenu.op_open.MouseUp += op_open_MouseUp;
             DirectoryInfo cache = new DirectoryInfo(System.IO.Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location) + "\\CoreData\\cache");
-            cache.Delete(true);
+            try
+            {
+                cache.Delete(true);
+            }
+            catch { }
+            MenuHide = (Storyboard)this.Resources["SidemenuHide"];
+            MenuHide.Completed += MenuHide_Completed;
+        }
+
+        void MenuHide_Completed(object sender, EventArgs e)
+        {
+            if(Transparent)
+            {
+                projectname.Foreground = Brushes.Black;
+            }
         }
 
         System.Windows.Forms.OpenFileDialog opf = new System.Windows.Forms.OpenFileDialog();
@@ -45,7 +59,7 @@ namespace uVoice
         {
             opf.ShowDialog();
             controlarea.Children.Remove(mainpiano);
-            mainpiano = new PianoRoll(opf.FileName);
+            mainpiano = new PianoRoll();
             mainpiano.Margin = new Thickness(0, 46, 0, 0);
             mainpiano.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#FF333333"));
         }
@@ -80,7 +94,14 @@ namespace uVoice
                 titlebar.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#111111"));
                 controlarea.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#333333"));
                 mainmenu.BorderBrush = Brushes.Transparent;
-                projectnameblur.Visibility = System.Windows.Visibility.Hidden;
+                projectnameblur.Opacity = 0;
+                projectname.Foreground = Brushes.White;
+                time_glow.Opacity = 0;
+                time.Foreground = Brushes.White;
+            }
+            if (this.WindowState != System.Windows.WindowState.Maximized)
+            {
+                Transparent = true;
             }
         }
 
@@ -97,14 +118,20 @@ namespace uVoice
                     titlebar.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#111111"));
                     controlarea.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#333333"));
                     mainmenu.BorderBrush = Brushes.Transparent;
-                    projectnameblur.Visibility = System.Windows.Visibility.Hidden;
+                    projectnameblur.Opacity = 0;
+                    projectname.Foreground = Brushes.White;
+                    time_glow.Opacity = 0;
+                    time.Foreground = Brushes.White;
                 }
                 else
                 {
                     titlebar.Background = Brushes.Transparent;
                     controlarea.Background = null;
                     mainmenu.BorderBrush = Brushes.White;
-                    projectnameblur.Visibility = System.Windows.Visibility.Visible;
+                    projectnameblur.Opacity = 1;
+                    projectname.Foreground = Brushes.Black;
+                    time_glow.Opacity = 1;
+                    time.Foreground = Brushes.Black;
                 }
             }
         }
@@ -157,6 +184,7 @@ namespace uVoice
         {
             Storyboard MenuShow = (Storyboard)this.Resources["SidemenuShow"];
             MenuShow.Begin();
+            projectname.Foreground = Brushes.White;
         }
 
         private void close_Click(object sender, RoutedEventArgs e)
@@ -174,9 +202,10 @@ namespace uVoice
             this.WindowState = System.Windows.WindowState.Minimized;
         }
 
+        Storyboard MenuHide { get; set; }
+
         private void grid1_MouseUp(object sender, MouseButtonEventArgs e)
         {
-            Storyboard MenuHide = (Storyboard)this.Resources["SidemenuHide"];
             MenuHide.Begin();
         }
 

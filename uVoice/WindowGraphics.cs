@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MahApps.Metro.Native;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.InteropServices;
@@ -26,6 +27,8 @@ namespace uVoice
         public static extern int DwmExtendFrameIntoClientArea(
             IntPtr hwnd,
             ref MARGINS pMarInset);
+
+
 
         public bool ExtendDwm(Window wnd)
         {

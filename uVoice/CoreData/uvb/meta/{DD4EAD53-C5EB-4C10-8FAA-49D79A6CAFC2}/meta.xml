@@ -19,16 +19,6 @@
         <fullbody></fullbody>
       </character>
     </assets>
-    <DRM>
-      <protected>false</protected>
-      <GalleryUri>http://uvoice.thebit.link/gal/voices/</GalleryUri>
-      <Extended>
-        <Company></Company>
-        <LicenceFile></LicenceFile>
-        <requirePurchase>false</requirePurchase>
-        <GalPurLic>http://uvoice.thebit.link/gal/voices/commercial/licences/DD4EAD53-C5EB-4C10-8FAA-49D79A6CAFC2/data.xml</GalPurLic>
-      </Extended>
-    </DRM>
     <Setting>
       <files>
         <file name="a.wav" exist="true">
@@ -40,4 +30,28 @@
       </aliasses>
     </Setting>
   </metadata>
+  <PluginMetadata>
+    <OptionalPlugins>
+      
+    </OptionalPlugins>
+    <RequiredPlugins>
+      <Plugin Name="microVoice Cloud"></Plugin>
+    </RequiredPlugins>
+    <Data>
+      <mVoiceCloud>
+        <DRM>
+      <editprotected>false</editprotected>
+      <redistprotected>false</redistprotected>
+      <useprotected>false</useprotected>
+      <GalleryUri>http://uvoice.thebit.link/gal/voices/</GalleryUri>
+      <Extended>
+        <Company></Company>
+        <LicenceFile></LicenceFile>
+        <requirePurchase>false</requirePurchase>
+        <GalPurLic>http://uvoice.thebit.link/gal/voices/commercial/licences/DD4EAD53-C5EB-4C10-8FAA-49D79A6CAFC2/data.xml</GalPurLic>
+      </Extended>
+    </DRM>
+      </mVoiceCloud>
+    </Data>
+  </PluginMetadata>
 </microVoice>

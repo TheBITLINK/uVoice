@@ -38,7 +38,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>icon.ico</ApplicationIcon>
+    <ApplicationIcon>
+    </ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="MahApps.Metro">
@@ -216,6 +217,7 @@
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
     <AppDesigner Include="Properties\" />
+    <Resource Include="Resources\Comfortaa-Regular.ttf" />
     <Resource Include="Resources\Entypo.ttf" />
   </ItemGroup>
   <ItemGroup>
@@ -228,9 +230,14 @@
     <Resource Include="Resources\Entypo-license.txt" />
   </ItemGroup>
   <ItemGroup>
+    <Resource Include="Resources\logo_mask_sm.png" />
     <None Include="CoreData\uvb\meta\{DD4EAD53-C5EB-4C10-8FAA-49D79A6CAFC2}\meta.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
     </None>
+    <Resource Include="icon.ico" />
+    <Resource Include="Resources\logo.png" />
+    <Resource Include="Resources\logo_mask.png" />
     <Content Include="libmp3lame.32.dll">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -239,9 +246,6 @@
     </Content>
     <Resource Include="Resources\kb.png" />
     <Resource Include="Resources\oc.png" />
-    <Resource Include="Resources\logo_nobg.png" />
-    <Resource Include="icon.ico" />
-    <Resource Include="Resources\logo.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="CoreData\uvb\stream\{DD4EAD53-C5EB-4C10-8FAA-49D79A6CAFC2}\" />

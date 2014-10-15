@@ -16,7 +16,7 @@
                             <Grid>
 
                                 <Grid Margin="143,10,10,10" x:Name="CoreContainer">
-                                    
+
                                 </Grid>
 
                                 <ListBox x:Name="RLB" Width="128" Margin="10,10,0,10" HorizontalAlignment="Left" SelectionChanged="RLB_SelectionChanged"/>
@@ -54,24 +54,54 @@
                             </Grid>
                         </TabItem>
                         <TabItem Header="Información">
-                            <Grid/>
+                            <Grid>
+                                <Label Content="Nombre del VoiceBank:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,10,0,0"/>
+                                <TextBox x:Name="nametb" HorizontalAlignment="Left" Height="23" Margin="10,41,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="470"/>
+                                <Label Content="Creador:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,72,0,0"/>
+                                <TextBox HorizontalAlignment="Left" Height="23" Margin="10,103,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="470"/>
+                                <Label Content="Página Web:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,134,0,0"/>
+                                <TextBox HorizontalAlignment="Left" Height="23" Margin="10,165,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="470"/>
+                                <Label Content="Descripción (formato RTF soportado):" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,196,0,0"/>
+                                <Label Content="Información de Copyright:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="12,357,0,0"/>
+                                <RichTextBox HorizontalAlignment="Left" Height="125" Margin="12,227,0,0" VerticalAlignment="Top" Width="468">
+                                    <FlowDocument/>
+                                </RichTextBox>
+                                <TextBox HorizontalAlignment="Left" Height="23" Margin="12,388,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="470"/>
+                                <ComboBox HorizontalAlignment="Left" Height="24" Margin="10,0,0,10" VerticalAlignment="Bottom" Width="470" SelectedIndex="0">
+                                    <ComboBoxItem Content="Formato de grabaciones WAV (Mayor Compatibilidad)"/>
+                                    <ComboBoxItem Content="Formato de grabaciones OGG Vorbis (Menor tamaño)"/>
+                                    <ComboBoxItem Content="Formato de Grabaciones WMA"/>
+                                    <ComboBoxItem Content="Formato de Grabaciones MP3"/>
+                                    <ComboBoxItem Content="Formato de Grabaciones FLAC"/>
+                                </ComboBox>
+                                <Label Content="Protección: (Inicia sesión en µVoice cloud para activar la protección en tus trabajos)" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="484,10,0,0"/>
+                                <Custom:ToggleSwitch Margin="504,41,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Content="Protección contra edición desactivada " OffLabel="Protección contra edición desactivada " OnLabel="Protección contra edición activada " IsEnabled="False"></Custom:ToggleSwitch>
+                                <Label Content="Evita que otras personas puedan editar tu VoiceBank o ver los archivos de grabación." HorizontalAlignment="Left" VerticalAlignment="Top" Margin="504,72,0,0" IsEnabled="False"/>
+                                <Custom:ToggleSwitch Margin="504,103,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Content="Protección contra redistribución desactivada " OffLabel="Protección contra redistribución desactivada " OnLabel="Protección contra redistribución activada " IsEnabled="False"/>
+                                <Label Content="Evita que las personas puedan instalar este VoiceBank si no ha sido descargado&#xD;&#xA;de la galería µVoice.&#xD;&#xA;(El VoiceBank debe estar publicado en la galería para activar esta opción)" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="504,133,0,0" IsEnabled="False"/>
+                                <Custom:ToggleSwitch Margin="504,196,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Content="Protección contra uso desactivada " OffLabel="Protección contra uso desactivada " OnLabel="Protección contra uso activada " IsEnabled="False"/>
+                                <Button  Style="{DynamicResource SquareButtonStyle}" Content="Editar Permisos" HorizontalAlignment="Left" Margin="800,194,0,0" VerticalAlignment="Top" Width="118" IsEnabled="False"/>
+                                <Label Content="Sólo las personas a las que des permiso podrán instalar y usar este VoiceBank&#xD;&#xA;Estas personas deben tener una cuenta de µVoice Cloud. También requerirán&#xD;&#xA;una conexión a internet al momento de instalar el VoiceBank." HorizontalAlignment="Left" VerticalAlignment="Top" Margin="504,227,0,0" IsEnabled="False"/>
+                                <Button  Style="{DynamicResource SquareButtonStyle}" Content="Exportar archivo uvb" HorizontalAlignment="Right" Margin="0,0,10,10" VerticalAlignment="Bottom" Width="136" IsEnabled="False"/>
+                                <Button  Style="{DynamicResource SquareButtonStyle}" Content="Exportar instalador" HorizontalAlignment="Right" Margin="0,0,151,10" VerticalAlignment="Bottom" Width="136" IsEnabled="False"/>
+                            </Grid>
                         </TabItem>
                         <TabItem Header="Assets">
                             <Grid Background="#00000000">
-                                <Custom:ToggleSwitch HorizontalAlignment="Left" VerticalAlignment="Top" Margin="26,45,0,0" Width="106" IsChecked="True"/>
-                                <Label Content="Ventana Principal Transparente" HorizontalAlignment="Left" Height="30" Margin="10,10,0,0" VerticalAlignment="Top" Width="291" FontSize="16"/>
-                                <Label Content="Desactivar Transparencia al Maximizar" HorizontalAlignment="Left" Height="30" Margin="10,75,0,0" VerticalAlignment="Top" Width="291" FontSize="16"/>
-                                <Custom:ToggleSwitch HorizontalAlignment="Left" VerticalAlignment="Top" Margin="26,110,0,0" Width="106" IsChecked="True"/>
-                                <Label Content="Color de fondo" HorizontalAlignment="Left" Height="30" Margin="10,140,0,0" VerticalAlignment="Top" Width="291" FontSize="16"/>
-                                <xctk:ColorCanvas Margin="10,175,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="235" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="Black" SelectedColor="#FF333333" Height="142"/>
-                                <Label Content="Color Primario" HorizontalAlignment="Left" Height="30" Margin="10,322,0,0" VerticalAlignment="Top" Width="291" FontSize="16"/>
-                                <xctk:ColorCanvas Margin="10,357,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="235" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="Black" SelectedColor="{DynamicResource AccentColor}" Height="142"/>
-                                <Grid Margin="311,45,5,78" Width="702" Background="#FF111111">
-                                    <Button Content="Cambiar" HorizontalAlignment="Left" Height="29" Margin="0,0,620,0" VerticalAlignment="Bottom" Width="82"/>
+                                <xctk:ColorCanvas Margin="11,343,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="235" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="Black" SelectedColor="{DynamicResource AccentColor}" Height="142"/>
+                                <Grid Margin="251,50,213,10" Background="#FF111111">
+                                    <Button Content="Cambiar" HorizontalAlignment="Left" Height="29" Margin="0" VerticalAlignment="Bottom" Width="82"/>
                                 </Grid>
-                                <Label Content="Imagen de del editor" HorizontalAlignment="Left" Height="43" Margin="306,10,0,0" VerticalAlignment="Top" Width="291" FontSize="16"/>
-                                <Custom:ToggleSwitch HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="323,0,0,10" Width="106"/>
-                                <Label Content="Ignorar archivo de fondo en Voice Banks y usar siempre el mio." HorizontalAlignment="Left" Height="33" Margin="306,0,0,40" VerticalAlignment="Bottom" Width="702" FontSize="16"/>
+                                <Label Content="Imagen de fondo del editor" HorizontalAlignment="Left" Height="35" Margin="251,10,0,0" VerticalAlignment="Top" Width="291" FontSize="16"/>
+                                <Label Content="Color Primario" HorizontalAlignment="Left" Height="30" Margin="10,289,0,0" VerticalAlignment="Top" Width="235" FontSize="16"/>
+                                <Grid Margin="810,50,10,10" Background="#FF111111">
+                                    <Button Content="Cambiar" HorizontalAlignment="Left" Height="29" Margin="0" VerticalAlignment="Bottom" Width="82"/>
+                                </Grid>
+                                <Label Content="Cuerpo Completo" HorizontalAlignment="Left" Height="30" Margin="810,10,0,0" VerticalAlignment="Top" Width="198" FontSize="16"/>
+                                <Label Content="Avatar del personaje" HorizontalAlignment="Left" Height="30" Margin="10,10,0,0" VerticalAlignment="Top" Width="235" FontSize="16"/>
+                                <Grid Margin="10,49,773,237" Background="#FF111111">
+                                    <Button Content="Cambiar" HorizontalAlignment="Left" Height="29" Margin="0" VerticalAlignment="Bottom" Width="82"/>
+                                </Grid>
                             </Grid>
                         </TabItem>
                         <TabItem Header="Misc.">
@@ -80,8 +110,9 @@
                     </TabControl>
                 </Grid>
                 <Button Content="&lt; Cancelar" HorizontalAlignment="Left" Height="32" VerticalAlignment="Top" Width="90" Click="Button_Click"/>
-                <Label Content="Editar Voz ({Voice_Name})" Height="32" Margin="95,0,94,0" VerticalAlignment="Top" FontSize="16" VerticalContentAlignment="Center" MouseDown="Label_MouseDown"/>
+                <Label Content="Editor de Voces" Height="32" Margin="95,0,94,0" VerticalAlignment="Top" FontSize="16" VerticalContentAlignment="Center" MouseDown="Label_MouseDown"/>
                 <Button Content="Guardar" HorizontalAlignment="Right" Height="32" VerticalAlignment="Top" Width="89"/>
+                <Label Content="{Binding Text, ElementName=nametb}" Height="32" Margin="95,0,94,0" VerticalAlignment="Top" FontSize="16" VerticalContentAlignment="Center" MouseDown="Label_MouseDown" HorizontalContentAlignment="Right"/>
             </Grid>
         </UserControl>
 

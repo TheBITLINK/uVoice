@@ -8,21 +8,84 @@
     <Grid Background="#FF111111">
         <Grid Height="128" VerticalAlignment="Top" Background="#FF333333">
             <Label Content="VOICE BANK" VerticalAlignment="Top" FontSize="22" Background="#FF111111"/>
-            <Image HorizontalAlignment="Left" Margin="0" Width="89" VerticalAlignment="Bottom" Height="89" Source="http://d.thebit.link/img/emiko.bmp" Stretch="UniformToFill"/>
-            <Label Content="Emiko Power" HorizontalAlignment="Left" Margin="89,39,0,0" VerticalAlignment="Top" Width="301" FontSize="16"/>
-            <Label Content="by: EMIBRAWLERXD" HorizontalAlignment="Left" Margin="89,70,0,0" VerticalAlignment="Top" Width="301" Foreground="#FF898989"/>
+            <Image HorizontalAlignment="Left" Margin="0" Width="89" VerticalAlignment="Bottom" Height="89" Source="https://scontent-a-dfw.xx.fbcdn.net/hphotos-xap1/v/t1.0-9/1525408_271232493026877_722652077_n.jpg?oh=b268f7f6511b61d4187d42e8e0925cf4&amp;oe=54BAC0B1" Stretch="UniformToFill"/>
+            <Label Content="Bitto-kun" HorizontalAlignment="Left" Margin="89,39,0,0" VerticalAlignment="Top" Width="211" FontSize="16"/>
+            <Label Content="by: TheBITLINK" HorizontalAlignment="Left" Margin="89,70,0,0" VerticalAlignment="Top" Width="211" Foreground="#FF898989"/>
             <Button Content="Cambiar" HorizontalAlignment="Left" Height="32" Margin="222,96,0,0" VerticalAlignment="Top" Width="78"/>
             <Button Content="Mas información" HorizontalAlignment="Left" Height="32" Margin="94,96,0,0" VerticalAlignment="Top" Width="123"/>
-            <Label Content="VOICE BANK" VerticalAlignment="Top" FontSize="22" Background="#FF111111"/>
+            <Label Content="Voz Seleccionada" VerticalAlignment="Top" FontSize="22" Background="#FF111111"/>
         </Grid>
         <ListBox x:Name="mainlb" Margin="0,128,0,0" Background="#FF111111" SelectionChanged="ListBox_SelectionChanged">
-            <ListBoxItem x:Name="op_new" x:FieldModifier="public" Content="           Nuevo Proyecto" FontSize="18" Height="48"/>
-            <ListBoxItem x:Name="op_open" x:FieldModifier="public" Content="           Abrir..." FontSize="18" Height="48"/>
-            <ListBoxItem x:Name="op_save" x:FieldModifier="public" Content="           Guardar" FontSize="18" Height="48"/>
-            <ListBoxItem x:Name="op_saveas" x:FieldModifier="public" Content="           Guardar Como" FontSize="18" Height="48"/>
-            <ListBoxItem x:Name="op_import" x:FieldModifier="public" Content="           Importar" FontSize="18" Height="48"/>
-            <ListBoxItem x:Name="op_export" x:FieldModifier="public" Content="           Exportar" FontSize="18" Height="48"/>
-            <ListBoxItem x:Name="op_exit" x:FieldModifier="public" Content="           Salir" FontSize="18" Height="48" MouseUp="ListBoxItem_MouseUp_1"/>
+            <ListBoxItem x:Name="op_new" x:FieldModifier="public" Height="48" Padding="0">
+                <Grid Height="48">
+                    <Label  Content="           Nuevo Proyecto" FontSize="18" Padding="0" VerticalAlignment="Center"></Label>
+                    <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="32" VerticalAlignment="Center" Width="32" Margin="10,0,0,0">
+                        <Rectangle.OpacityMask>
+                            <VisualBrush Visual="{StaticResource appbar_add}"></VisualBrush>
+                        </Rectangle.OpacityMask>
+                    </Rectangle>
+                </Grid>
+            </ListBoxItem>
+            <ListBoxItem x:Name="op_open" x:FieldModifier="public" Height="48" Padding="0">
+                <Grid Height="48">
+                    <Label  Content="           Abrir" FontSize="18" Padding="0" VerticalAlignment="Center"/>
+                    <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="26" VerticalAlignment="Center" Width="32" Margin="10,0,0,0" Stroke="#00000000">
+                        <Rectangle.OpacityMask>
+                            <VisualBrush Visual="{StaticResource appbar_folder_open}"/>
+                        </Rectangle.OpacityMask>
+                    </Rectangle>
+                </Grid>
+            </ListBoxItem>
+            <ListBoxItem x:Name="op_save" x:FieldModifier="public" Height="48" Padding="0">
+                <Grid Height="48">
+                    <Label  Content="           Guardar" FontSize="18" Padding="0" VerticalAlignment="Center"/>
+                    <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="28" VerticalAlignment="Center" Width="29" Margin="10,0,0,0">
+                        <Rectangle.OpacityMask>
+                            <VisualBrush Visual="{StaticResource appbar_save}"/>
+                        </Rectangle.OpacityMask>
+                    </Rectangle>
+                </Grid>
+            </ListBoxItem>
+            <ListBoxItem x:Name="op_saveas" x:FieldModifier="public" Height="48" Padding="0">
+                <Grid Height="48">
+                    <Label  Content="           Guardar Como..." FontSize="18" Padding="0" VerticalAlignment="Center"/>
+                    <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="28" VerticalAlignment="Center" Width="29" Margin="10,0,0,0">
+                        <Rectangle.OpacityMask>
+                            <VisualBrush Visual="{StaticResource appbar_save}"/>
+                        </Rectangle.OpacityMask>
+                    </Rectangle>
+                </Grid>
+            </ListBoxItem>
+            <ListBoxItem x:Name="op_import" x:FieldModifier="public" Height="48" Padding="0">
+                <Grid Height="48">
+                    <Label  Content="           Importar" FontSize="18" Padding="0" VerticalAlignment="Center"/>
+                    <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="28" VerticalAlignment="Center" Width="29" Margin="10,0,0,0">
+                        <Rectangle.OpacityMask>
+                            <VisualBrush Visual="{StaticResource appbar_download}"/>
+                        </Rectangle.OpacityMask>
+                    </Rectangle>
+                </Grid>
+            </ListBoxItem>
+            <ListBoxItem x:Name="op_export" x:FieldModifier="public" Height="48" Padding="0">
+                <Grid Height="48">
+                    <Label  Content="           Exportar" FontSize="18" Padding="0" VerticalAlignment="Center"/>
+                    <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="28" VerticalAlignment="Center" Width="29" Margin="10,0,0,0">
+                        <Rectangle.OpacityMask>
+                            <VisualBrush Visual="{StaticResource appbar_upload}"/>
+                        </Rectangle.OpacityMask>
+                    </Rectangle>
+                </Grid>
+            </ListBoxItem>
+            <ListBoxItem x:Name="op_exit" x:FieldModifier="public" Height="48" Padding="0">
+                <Grid Height="48">
+                    <Label  Content="           Salir" FontSize="18" Padding="0" VerticalAlignment="Center"/>
+                    <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="28" VerticalAlignment="Center" Width="29" Margin="10,0,0,0">
+                        <Rectangle.OpacityMask>
+                            <VisualBrush Visual="{StaticResource appbar_door_leave}"/>
+                        </Rectangle.OpacityMask>
+                    </Rectangle>
+                </Grid>
+            </ListBoxItem>
         </ListBox>
 
     </Grid>

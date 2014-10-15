@@ -15,8 +15,7 @@
                 </Rectangle.OpacityMask>
             </Rectangle>
         </Button>
-        <ProgressBar VerticalAlignment="Top" Maximum="300"/>
-        <Label Content="0s" HorizontalAlignment="Left" Margin="10,15,0,0" VerticalAlignment="Top" FontSize="22" UseLayoutRounding="True"/>
+        <ProgressBar VerticalAlignment="Top" Maximum="300" Margin="0,49,0,0"/>
         <Grid x:Name="viewer" Height="186" Margin="0,59,0,0" VerticalAlignment="Top" Background="Black">
             <WindowsFormsHost Margin="0" Background="Black">
                 <Nau:WaveViewer x:Name="waveView" AutoSize="True" AutoSizeMode="GrowAndShrink" Dock="Fill" Enabled="True" Visible="True" BackColor="White"/>
