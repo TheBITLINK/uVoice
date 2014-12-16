@@ -257,6 +257,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="CoreData\uvb\stream\{DD4EAD53-C5EB-4C10-8FAA-49D79A6CAFC2}\" />
+    <Folder Include="Shaders\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

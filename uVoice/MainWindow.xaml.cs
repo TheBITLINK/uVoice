@@ -15,6 +15,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Windows.Threading;
 using System.IO;
+using System.Windows.Forms;
 
 namespace uVoice
 {
@@ -43,6 +44,11 @@ namespace uVoice
             catch { }
             MenuHide = (Storyboard)this.Resources["SidemenuHide"];
             MenuHide.Completed += MenuHide_Completed;
+            if (Screen.PrimaryScreen.Bounds.Height < 768)
+            {
+                this.ResizeMode = System.Windows.ResizeMode.CanMinimize;
+                this.WindowState = System.Windows.WindowState.Maximized;
+            }
         }
 
         void MenuHide_Completed(object sender, EventArgs e)
