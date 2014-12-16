@@ -45,6 +45,7 @@
     <Reference Include="MahApps.Metro">
       <HintPath>..\packages\MahApps.Metro.0.14.0-ALPHA98\lib\net45\MahApps.Metro.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.Windows.Shell, Version=3.5.41019.1, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
     <Reference Include="NAudio">
       <HintPath>..\packages\NAudio.1.7.1\lib\net35\NAudio.dll</HintPath>
     </Reference>
@@ -110,6 +111,9 @@
     <Compile Include="Meta\ErrDialog.xaml.cs">
       <DependentUpon>ErrDialog.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Meta\Spinner.xaml.cs">
+      <DependentUpon>Spinner.xaml</DependentUpon>
+    </Compile>
     <Compile Include="PianoRoll.xaml.cs">
       <DependentUpon>PianoRoll.xaml</DependentUpon>
     </Compile>
@@ -155,6 +159,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="Meta\ErrDialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Meta\Spinner.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
