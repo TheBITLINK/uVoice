@@ -16,6 +16,8 @@ using System.Windows.Shapes;
 using System.Windows.Threading;
 using System.IO;
 using System.Windows.Forms;
+using Microsoft.WindowsAPICodePack.Taskbar;
+using System.Windows.Interop;
 
 namespace uVoice
 {
@@ -31,6 +33,7 @@ namespace uVoice
 
         public MainWindow()
         {
+            TaskbarManager.Instance.ApplicationId = "µVoice";
             InitializeComponent();
             Clicked = false;
             DoubleClickCount.Interval = TimeSpan.FromMilliseconds(200);
@@ -49,6 +52,35 @@ namespace uVoice
                 this.ResizeMode = System.Windows.ResizeMode.CanMinimize;
                 this.WindowState = System.Windows.WindowState.Maximized;
             }
+            
+        }
+
+        private async void LoadJumplist()
+        {
+            await System.Threading.Tasks.Task.Delay(5000);
+            JumpList jl = JumpList.CreateJumpList();
+            JumpListCustomCategory jlc = new JumpListCustomCategory("µVoice Alpha (Private Build)");
+            JumpListLink[] jli = new JumpListLink[] { new JumpListLink("report", "Reportar Un Problema"), new JumpListLink("reports", "Decirle a bit que es mierda."), new JumpListLink("update", "Buscar Actualizaciones") };
+            jlc.AddJumpListItems(jli);
+            jl.AddCustomCategories(jlc);
+            jl.Refresh();
+            TaskbarManager.Instance.TabbedThumbnail.SetThumbnailClip(new WindowInteropHelper(this).Handle, new System.Drawing.Rectangle(10, 64, Convert.ToInt32(mainpiano.ActualWidth), Convert.ToInt32(mainpiano.ActualHeight)));
+            TabbedThumbnail preview = new TabbedThumbnail(this, mainpiano, new System.Windows.Vector(10000, 10000));
+            preview.SetWindowIcon(Properties.Resources.icon);
+            preview.Title = this.Title;
+            try
+            {
+                TaskbarManager.Instance.TabbedThumbnail.AddThumbnailPreview(preview);
+            }
+            catch { }
+            RenderTargetBitmap rtb = new RenderTargetBitmap((int)play.ActualWidth, (int)play.ActualHeight, 96, 96, PixelFormats.Pbgra32);
+            rtb.Render(play);
+            MemoryStream stream = new MemoryStream();
+            BitmapEncoder encoder = new BmpBitmapEncoder();
+            encoder.Frames.Add(BitmapFrame.Create(rtb));
+            encoder.Save(stream);
+            System.Drawing.Bitmap bmp = new System.Drawing.Bitmap(stream);
+            TaskbarManager.Instance.ThumbnailToolBars.AddButtons(mainpiano, new ThumbnailToolBarButton[] { new ThumbnailToolBarButton(System.Drawing.Icon.FromHandle(bmp.GetHicon()), "Play") });
         }
 
         void MenuHide_Completed(object sender, EventArgs e)
@@ -98,20 +130,10 @@ namespace uVoice
             }
             if (!TransparencyEnabled)
             {
-                //titlebar.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#111111"));
-                controlarea.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#333333"));
-                mainmenu.BorderBrush = Brushes.Transparent;
-                projectnameblur.Opacity = 0;
-                projectname.Foreground = Brushes.White;
-                time_glow.Opacity = 0;
-                time.Foreground = Brushes.White;
-                username.Foreground = Brushes.White;
-                usernameblur.Opacity = 0;
+                
             }
-            if (this.WindowState != System.Windows.WindowState.Maximized)
-            {
-                Transparent = true;
-            }
+            splash.Visibility = System.Windows.Visibility.Visible;
+            LoadJumplist();
         }
 
         bool Transparent { get; set; }
@@ -124,27 +146,7 @@ namespace uVoice
                 Transparent = status;
                 if (!status)
                 {
-                    //titlebar.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#111111"));
-                    controlarea.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#333333"));
-                    mainmenu.BorderBrush = Brushes.Transparent;
-                    projectnameblur.Opacity = 0;
-                    projectname.Foreground = Brushes.White;
-                    time_glow.Opacity = 0;
-                    time.Foreground = Brushes.White;
-                    username.Foreground = Brushes.White;
-                    usernameblur.Opacity = 0;
-                }
-                else
-                {
-                    //titlebar.Background = Brushes.Transparent;
-                    controlarea.Background = null;
-                    mainmenu.BorderBrush = Brushes.White;
-                    projectnameblur.Opacity = 1;
-                    projectname.Foreground = Brushes.Black;
-                    time_glow.Opacity = 1;
-                    time.Foreground = Brushes.Black;
-                    username.Foreground = Brushes.Black;
-                    usernameblur.Opacity = 1;
+                    
                 }
             }
         }
@@ -206,9 +208,12 @@ namespace uVoice
             this.Close();
         }
 
+        public bool acb = true;
+
         private void maxres_Click(object sender, RoutedEventArgs e)
         {
             this.MaximizeOrRestore();
+            acb = false;
         }
 
         private void minimize_Click(object sender, RoutedEventArgs e)
@@ -241,6 +246,7 @@ namespace uVoice
             {
                 this.MaximizeOrRestore();
             }
+            
         }
 
         private void MenuItem_Click(object sender, RoutedEventArgs e)
@@ -258,6 +264,16 @@ namespace uVoice
             {
                 LayoutRoot.Margin = new Thickness(4,0,4,4);
             }
+        }
+
+        private void Image_MouseEnter(object sender, System.Windows.Input.MouseEventArgs e)
+        {
+                        
+        }
+
+        private void Storyboard_Completed(object sender, EventArgs e)
+        {
+            splash.Visibility = System.Windows.Visibility.Hidden;
         }
     }
 }

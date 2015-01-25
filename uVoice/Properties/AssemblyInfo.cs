@@ -7,12 +7,12 @@ using System.Windows;
 // La información general sobre un ensamblado se controla mediante el siguiente 
 // conjunto de atributos. Cambie estos atributos para modificar la información
 // asociada con un ensamblado.
-[assembly: AssemblyTitle("uVoice")]
-[assembly: AssemblyDescription("uVoice Project")]
+[assembly: AssemblyTitle("µVoice")]
+[assembly: AssemblyDescription("µVoice Project")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("TheBITLINK")]
-[assembly: AssemblyProduct("uVoice")]
-[assembly: AssemblyCopyright("©2014 TheBITLINK, see credits")]
+[assembly: AssemblyProduct("µVoice")]
+[assembly: AssemblyCopyright("©2014 TheBITLINK")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

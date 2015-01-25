@@ -23,6 +23,10 @@ namespace uVoice
         public Settings()
         {
             InitializeComponent();
+            BgCol.AvailableColors.Clear();
+            BgCol.AvailableColors.Add(new Xceed.Wpf.Toolkit.ColorItem(Colors.White, "Blanco"));
+            BgCol.AvailableColors.Add(new Xceed.Wpf.Toolkit.ColorItem(Colors.Black, "Negro"));
+            
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -34,6 +38,25 @@ namespace uVoice
         {
             MainWindow ok = (MainWindow)Application.Current.MainWindow;
             ok.TitleBar();
+        }
+
+        private void TabControl_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            ((Label)((TabItem)e.AddedItems[0]).Header).Foreground = (SolidColorBrush)App.Current.FindResource("AccentColorBrush");
+            ((Label)((TabItem)e.AddedItems[0]).Header).FontWeight = FontWeight.FromOpenTypeWeight(400);
+            try
+            {
+                ((Label)((TabItem)e.RemovedItems[0]).Header).Foreground = (SolidColorBrush)App.Current.FindResource("BlackBrush");
+                ((Label)((TabItem)e.RemovedItems[0]).Header).FontWeight = FontWeight.FromOpenTypeWeight(100);
+            }
+            catch { }
+        }
+
+        private void AcCol_SelectedColorChanged(object sender, RoutedPropertyChangedEventArgs<Color> e)
+        {
+            App.Current.Resources["AccentColor"] = e.NewValue;
+            App.Current.Resources["AccentColorBrush"] = new SolidColorBrush(e.NewValue);
+
         }
     }
 }

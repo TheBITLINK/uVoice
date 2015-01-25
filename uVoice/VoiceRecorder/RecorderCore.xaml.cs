@@ -74,7 +74,7 @@ namespace uVoice.VoiceRecorder
 
         void waveIn_DataAvailable(object sender, WaveInEventArgs e)
         {
-            writer.WriteData(e.Buffer, 0, e.BytesRecorded);
+            writer.Write(e.Buffer, 0, e.BytesRecorded);
         }
 
 
