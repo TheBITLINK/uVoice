@@ -1,0 +1,41 @@
+.uv-pianoRoll {
+    -webkit-user-select: none;
+    height: ~"calc(100% - 90px)";
+    position: absolute;
+    width: 100%;
+
+    .noteContainer {
+        overflow-y: scroll;
+        height: 100%;
+        width: 100%;
+    }
+
+    .note {
+        height: 16px;
+        .pianoKey {
+            width: 96px;
+            height: 100%;
+            background: rgba(255,255,255,.8);
+            border-bottom: 1px solid rgba(0,0,0,.1);
+            
+            &:active {
+                background: @accent-color!important;
+            }
+        }
+
+        &:hover {
+            box-shadow: 0px 0px 2px @accent-color;
+        }
+    }
+
+    .sharp.note {
+        background: rgba(0,0,0,.4);
+
+        .pianoKey {
+            background: rgba(0,0,0,.8);
+            width: 96px;
+            border-right: 32px solid rgba(255,255,255,.75);
+            border-bottom: none;
+        }
+    }
+}

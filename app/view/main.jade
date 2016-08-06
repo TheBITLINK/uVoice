@@ -1,0 +1,15 @@
+extends ./partial/layout
+block titlebar-content
+  img#uv-logo(src='../assets/images/uvlogo.svg', draggable="false")
+  .ui.pointing.secondary.menu
+    .active.item Project 1
+    .item Project 2
+    .item test
+    .item asjdk
+block content
+  include editor/toolbar
+  include editor/pianoRoll
+  script.
+    require('coffee-script/register');
+    const µVoiceEditorClass = require('../assets/scripts/editorMain.coffee');
+    window.µVEditor = new µVoiceEditorClass();

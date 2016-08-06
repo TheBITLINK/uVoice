@@ -1,0 +1,3 @@
+[submodule "app/assets/stylesheets/lib/Semantic-UI-LESS"]
+	path = app/assets/stylesheets/lib/Semantic-UI-LESS
+	url = https://github.com/Semantic-Org/Semantic-UI-LESS

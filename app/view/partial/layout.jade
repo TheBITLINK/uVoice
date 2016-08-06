@@ -1,0 +1,23 @@
+doctype
+html
+  meta(charset="UTF-8")
+  block title
+    title µVoice
+  link(rel='stylesheet', href='../assets/stylesheets/main.less')
+body
+  #uv-main-sidebar.ui.sidebar.inverted.vertical.menu
+    a.item.sbheader µVoice
+    block sidebar-items
+      a.item test
+  #uv-titlebar
+    block titlebar-content
+    .titlebar-buttons
+      button#minimize-btn(tabindex='-1'): .material-icons remove
+      button#maximize-btn(tabindex='-1'): .material-icons fullscreen
+      button#close-btn(tabindex='-1'): .material-icons close
+  #uv-main-content.pusher
+    block content
+  #uv-overlay
+  script(src='../assets/scripts/common.coffee')
+  script(src='../assets/scripts/lib/semantic.js')
+  block scripts
