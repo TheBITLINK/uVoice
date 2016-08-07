@@ -3,7 +3,7 @@ html
   meta(charset="UTF-8")
   block title
     title µVoice
-  link(rel='stylesheet', href='../assets/stylesheets/main.less')
+  link(rel='stylesheet', href='main.css')
 body
   #uv-main-sidebar.ui.sidebar.inverted.vertical.menu
     a.item.sbheader µVoice
@@ -18,6 +18,13 @@ body
   #uv-main-content.pusher
     block content
   #uv-overlay
-  script(src='../assets/scripts/common.coffee')
-  script(src='../assets/scripts/lib/semantic.js')
+  script.
+    if(window && window.process && window.process.type && process.versions.electron) {
+      require('coffee-script/register');
+      const ElectronRuntime = require('../runtimes/electron');
+      window.runtime = new ElectronRuntime();
+      window.runtime.init();
+    }
+  script(src='main.js')
+  script(src='../assets/scripts/semantic.js')
   block scripts

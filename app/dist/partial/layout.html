@@ -1,0 +1,6 @@
+<!DOCTYPE html><html><meta charset="UTF-8"><title>µVoice</title><link rel="stylesheet" href="main.css"></html><body><div id="uv-main-sidebar" class="ui sidebar inverted vertical menu"><a class="item sbheader">µVoice</a><a class="item">test</a></div><div id="uv-titlebar"><div class="titlebar-buttons"><button id="minimize-btn" tabindex="-1"><div class="material-icons">remove</div></button><button id="maximize-btn" tabindex="-1"><div class="material-icons">fullscreen</div></button><button id="close-btn" tabindex="-1"><div class="material-icons">close</div></button></div></div><div id="uv-main-content" class="pusher"></div><div id="uv-overlay"></div><script>if(window && window.process && window.process.type && process.versions.electron) {
+  require('coffee-script/register');
+  const ElectronRuntime = require('../runtimes/electron');
+  window.runtime = new ElectronRuntime();
+  window.runtime.init();
+}</script><script src="main.js"></script><script src="../assets/scripts/semantic.js"></script></body>

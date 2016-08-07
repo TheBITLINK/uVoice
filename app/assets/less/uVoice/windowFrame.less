@@ -9,7 +9,7 @@
     left: 0;
     z-index: 100;
     border-radius: 3px 3px 0 0;
-    -webkit-user-select: none;
+    user-select: none;
 
     .titlebar-buttons {
         position: fixed;
@@ -139,5 +139,13 @@
 }
 
 #uv-main-sidebar {
-    -webkit-user-select: none;
+    user-select: none;
+}
+
+.browser {
+    .titlebar-buttons {display: none;}
+    #uv-titlebar .ui.pointing.secondary.menu {display: none;}
+    #uv-main-content, #uv-titlebar, #uv-logo {
+        border-radius: 0;
+    }
 }

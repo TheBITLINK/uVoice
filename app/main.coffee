@@ -1,14 +1,11 @@
-{app, BrowserWindow} = require 'electron'
-win = undefined
+µVEditor = require './core/editorMain'
+µVCommon = require './core/common'
+BrowserRuntime = require './runtimes/browser'
 
-app.on 'ready', ->
-  win = new BrowserWindow {
-      width: 1024
-      height: 600
-      frame: false
-      transparent: true
-  }
-  win.loadURL "file://#{__dirname}/view/main.jade"
-  win.on 'closed', -> win=null
+class µVoice
+  constructor: ->
+    @common  = new µVCommon()
+    @editor  = new µVEditor()
+    @runtime = window.runtime or new BrowserRuntime()
 
-app.on 'window-all-closed', -> app.quit() if process.platform isnt 'darwin'
+window.µV = new µVoice()
