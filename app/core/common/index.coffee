@@ -1,7 +1,9 @@
 jQuery = require 'jquery'
 
 class µVoiceCommonClass
-  constructor: -> @init()
+  constructor: ->
+    @notes = require './notes'
+    @init()
 
   init:=>
     window.$ = window.jQuery = jQuery

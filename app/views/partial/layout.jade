@@ -4,11 +4,12 @@ html
   block title
     title µVoice
   link(rel='stylesheet', href='main.css')
-body
+body.uV
   #uv-main-sidebar.ui.sidebar.inverted.vertical.menu
     a.item.sbheader µVoice
     block sidebar-items
       a.item test
+      a.item(href='') Reload µVoice
   #uv-titlebar
     block titlebar-content
     .titlebar-buttons
@@ -23,7 +24,6 @@ body
       require('coffee-script/register');
       const ElectronRuntime = require('../runtimes/electron');
       window.runtime = new ElectronRuntime();
-      window.runtime.init();
     }
   script(src='main.js')
   script(src='../assets/scripts/semantic.js')

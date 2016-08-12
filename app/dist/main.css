@@ -57469,16 +57469,18 @@ html.ios body {
   color: #FFFFFF;
   width: 100%;
   height: 40px;
-  -webkit-app-region: drag;
   position: fixed;
   top: 0;
   left: 0;
   z-index: 100;
-  border-radius: 3px 3px 0 0;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+}
+.desktop #uv-titlebar {
+  -webkit-app-region: drag;
+  border-radius: 3px 3px 0 0;
 }
 #uv-titlebar .titlebar-buttons {
   position: fixed;
@@ -57486,7 +57488,12 @@ html.ios body {
   top: 0;
   height: 40px;
   z-index: 20000;
+}
+.desktop #uv-titlebar .titlebar-buttons {
   -webkit-app-region: no-drag;
+}
+.browser #uv-titlebar .titlebar-buttons {
+  display: none;
 }
 #uv-titlebar .titlebar-buttons button {
   height: 40px;
@@ -57512,10 +57519,15 @@ html.ios body {
   top: 6px;
   pointer-events: none;
 }
+.linux.desktop #uv-titlebar .titlebar-buttons button#maximize-btn {
+  display: none!important;
+}
 #uv-titlebar #uv-logo {
   height: 40px;
   float: left;
   background: rgba(0, 0, 0, 0.1);
+}
+.desktop #uv-titlebar #uv-logo {
   border-radius: 3px 0 0 0;
   -webkit-app-region: no-drag;
 }
@@ -57529,6 +57541,9 @@ html.ios body {
   margin: 0 96px 0 64px;
   color: white;
   border-color: transparent;
+}
+.browser #uv-titlebar .ui.pointing.secondary.menu {
+  display: none;
 }
 #uv-titlebar .ui.pointing.secondary.menu .item {
   color: white;
@@ -57552,6 +57567,9 @@ html.ios body {
   border-radius: 3px;
   overflow: hidden;
   position: absolute;
+}
+.desktop #uv-main-content {
+  border-radius: 3px;
 }
 #uv-overlay {
   position: fixed;
@@ -57597,17 +57615,6 @@ html.ios body {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-}
-.browser .titlebar-buttons {
-  display: none;
-}
-.browser #uv-titlebar .ui.pointing.secondary.menu {
-  display: none;
-}
-.browser #uv-main-content,
-.browser #uv-titlebar,
-.browser #uv-logo {
-  border-radius: 0;
 }
 .uv-toolbar {
   -webkit-user-select: none;

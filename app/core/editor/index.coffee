@@ -3,7 +3,7 @@ $ = require 'jquery'
 
 class µVoiceEditorClass
   constructor: ->
-    @pianoRoll = new µVoicePianoRoll()
+    @pianoRoll = new µVoicePianoRoll $('.uv-pianoRoll')[0]
     @sidebarEvents()
 
   sidebarEvents:=>

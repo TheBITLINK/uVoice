@@ -2,11 +2,11 @@
 .uv-pianoRoll
   .noteContainer
     - var notes = ["B","A#","A","G#","G","F#","F","E","D#","D","C#","C"]
-    - for (var o = 8; o > 0; o-- )
+    - for (var o = 6; o > 1; o-- )
       .octave(data-o=o)
         each note in notes
           - var isSharp = note.indexOf('#') >= 0
           if isSharp
-            .sharp.note(data-n=note, data-o=o): .pianoKey
+            .sharp.note(data-n=note.substr(0,1), data-o=o): .pianoKey
           else
             .note(data-n=note, data-o=o): .pianoKey

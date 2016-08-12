@@ -9,6 +9,10 @@ class ElectronRuntime extends RuntimeBase
   init: =>
     @titleBarEvents()
     document.body.className += ' desktop'
+    document.body.className += ' win32' if navigator.appVersion.includes 'Win'
+    document.body.className += ' linux' if navigator.appVersion.includes 'Linux'
+    document.body.className += ' osx'   if navigator.appVersion.includes 'Mac'
+    document.body.className += ' x11'   if navigator.appVersion.includes 'X11'
 
   titleBarEvents: =>
     # Close Button
@@ -20,10 +24,7 @@ class ElectronRuntime extends RuntimeBase
     # Minimize Button
     document.getElementById 'minimize-btn'
     .addEventListener 'click', @minimizeWindow
-    # Hide Maximize on Linux
-    if navigator.platform is 'Linux x86_64'
-      document.getElementById 'maximize-btn'
-      .style = 'display:none;'
+      
 
   minimizeWindow: => @win.minimize()
   maximizeWindow: => if @win.isMaximized() then @win.unmaximize() else @win.maximize()
