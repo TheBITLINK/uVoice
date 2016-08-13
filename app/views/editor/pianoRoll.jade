@@ -7,6 +7,6 @@
         each note in notes
           - var isSharp = note.indexOf('#') >= 0
           if isSharp
-            .sharp.note(data-n=note.substr(0,1), data-o=o): .pianoKey
+            .sharp.note(data-n=note.substr(0,1), data-o=o, name=note.substr(0,1)+'s'+o): .pianoKey
           else
-            .note(data-n=note, data-o=o): .pianoKey
+            .note(data-n=note, data-o=o, name=note+o): .pianoKey

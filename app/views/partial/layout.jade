@@ -21,10 +21,9 @@ body.uV
   #uv-overlay
   script.
     if(window && window.process && window.process.type && process.versions.electron) {
-      require('coffee-script/register');
-      const ElectronRuntime = require('../runtimes/electron');
+      const ElectronRuntime = require('../app/runtimes/electron');
       window.runtime = new ElectronRuntime();
     }
-  script(src='main.js')
-  script(src='../assets/scripts/semantic.js')
+  script(src='app.js')
+  script(src='js/libs.js')
   block scripts
