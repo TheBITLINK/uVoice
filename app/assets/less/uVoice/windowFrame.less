@@ -1,3 +1,32 @@
+#uv-main-content {
+    background: #111;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    
+    @media (min-width: 721px) {
+        padding-top: 40px;   
+    }
+    
+    /*
+    &::after {
+        top: -30px;
+    }
+
+    @media (max-width: 720px) {
+        &::after {
+            top: -70px;
+        } 
+    }*/
+
+    .desktop & {
+        border-radius: 3px;
+    }
+}
+
 #uv-titlebar {
     background: @accent-color;
     color: #FFFFFF;
@@ -5,9 +34,12 @@
     height: 40px;
     position: fixed;
     top: 0;
-    left: 0;
     z-index: 100;
     user-select: none;
+
+    @media (max-width: 720px) {
+        display: none;
+    }
 
     .desktop & {
         -webkit-app-region: drag;
@@ -61,25 +93,6 @@
         }
     }
 
-    #uv-logo {
-        height: 40px;
-        float: left;
-        background: rgba(0,0,0,.1);
-        
-        .desktop & {
-            border-radius: 3px 0 0 0;
-            -webkit-app-region: no-drag;
-        }
-        
-
-        &:hover {
-            background: rgba(0,0,0,.05);
-        }
-        &:active {
-            background: rgba(0,0,0,.2);
-        }
-    }
-
     .ui.pointing.secondary.menu {
         margin: 0 96px 0 64px;
         color: white;
@@ -106,16 +119,29 @@
     }
 }
 
-#uv-main-content {
-    padding-top: 40px;
-    background: #111;
-    height: 100%;
-    width: 100%;
-    border-radius: 3px;
-    overflow: hidden;
+#uv-logo {
+    height: 40px;
     position: absolute;
+    top: 0;
+    left: 0;
+    background: @accent-dark;
+    z-index: 200;
+    user-select: none;
+
+    @media (max-width: 720px) {
+        height: 48px;
+    }
+
     .desktop & {
-        border-radius: 3px;
+        border-radius: 3px 0 0 0;
+        -webkit-app-region: no-drag;
+    }
+       
+    &:hover {
+        background: darken(@accent-color, 5%);
+    }
+    &:active {
+        background: @accent-darker;
     }
 }
 
@@ -163,4 +189,11 @@
 
 #uv-main-sidebar {
     user-select: none;
+    .sbheader {
+        background: @accent-color;
+
+        @media(max-width: 720px) {
+            height: 48px;
+        }
+    }
 }

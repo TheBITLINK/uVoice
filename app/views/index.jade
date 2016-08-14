@@ -1,11 +1,8 @@
 extends ./partial/layout
 block titlebar-content
-  img#uv-logo(src='images/uvlogo.svg', draggable="false")
   .ui.pointing.secondary.menu
     .active.item Project 1
-    .item Project 2
-    .item test
-    .item asjdk
 block content
   include editor/toolbar
   include editor/pianoRoll
+  include editor/bottomBar

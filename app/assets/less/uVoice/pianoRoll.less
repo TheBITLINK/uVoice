@@ -1,12 +1,13 @@
 .uv-pianoRoll {
     user-select: none;
-    height: ~"calc(100% - 90px)";
-    position: absolute;
     width: 100%;
+    overflow-y: scroll;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 24px;
 
     .noteContainer {
-        overflow-y: scroll;
-        height: 100%;
         width: 100%;
     }
 

@@ -33,6 +33,9 @@ class ElectronRuntime extends Runtime
     document.getElementById('close-btn').addEventListener('click', () => this.closeWindow());
     document.getElementById('maximize-btn').addEventListener('click', () => this.maximizeWindow());
     document.getElementById('minimize-btn').addEventListener('click', () => this.minimizeWindow());
+    document.getElementById('minimize-btn').addEventListener('click', () => this.minimizeWindow());
+    document.getElementById('uv-e-devtools').addEventListener('click', () => this.toggleDevTools());
+    document.getElementById('uv-e-refresh').addEventListener('click', () => window.location.reload());
   }
 
   /** Minimize the app window */
@@ -48,6 +51,11 @@ class ElectronRuntime extends Runtime
     } else {
       this.win.maximize();
     }
+  }
+
+  /** Open or close DevTools */
+  toggleDevTools() {
+    this.win.toggleDevTools();
   }
 }
 

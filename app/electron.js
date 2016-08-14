@@ -6,6 +6,9 @@ app.on('ready', () => {
   win = new BrowserWindow({
     width: 1024,
     height: 600,
+    minWidth: 721,
+    minHeight: 64,
+    overlayScrollbars: true,
     frame: false,
     transparent: true,
   });
