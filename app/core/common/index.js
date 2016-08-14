@@ -12,10 +12,6 @@ export default class Common {
 
   /** Initialize µVoice. */
   init() {
-    // Temporary
-    $('.uv-toolbar').on('click', 'button', () => {
-      this.showTooltip('Not yet supported.');
-    });
   }
 
   /**

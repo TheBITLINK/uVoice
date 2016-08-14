@@ -1,5 +1,9 @@
 .uv-toolbar
-  button.active: .material-icons pan_tool
-  button: .material-icons select_all
-  button: .material-icons queue
-  button: .material-icons create
+  button(v-bind:class='[ mode=="pan"?"active":"" ]', v-on:click="setMode('pan')")
+    .material-icons pan_tool
+  button(v-bind:class='[ mode=="select"?"active":"" ]', v-on:click="setMode('select')")
+    .material-icons select_all
+  button(v-bind:class='[ mode=="add"?"active":"" ]', v-on:click="setMode('add')")
+    .material-icons queue
+  button(v-bind:class='[ mode=="edit"?"active":"" ]', v-on:click="setMode('edit')")
+    .material-icons create

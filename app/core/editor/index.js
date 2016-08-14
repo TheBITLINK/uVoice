@@ -1,3 +1,4 @@
+import Vue from 'vue';
 import $ from 'jquery';
 import PianoRoll from './pianoRoll';
 
@@ -7,10 +8,30 @@ import PianoRoll from './pianoRoll';
  * @property {string}    mode      - Current mode.
  */
 export default class Editor {
-  constructor() {
+  /**
+   * Create a new editor instance.
+   * @param {HTMLElement} el - The element to link to this editor.
+   */
+  constructor(el) {
     this.pianoRoll = new PianoRoll($('.uv-pianoRoll')[0]);
     this.mode = 'select';
     this.registerEvents();
+    this.vue = new Vue({
+      data: this,
+      el,
+      methods: {
+        setMode: this.setMode,
+      },
+    });
+  }
+
+  /**
+   * Set the editor mode.
+   * @param {string} mode - New Mode
+   */
+  setMode(mode) {
+    this.mode = mode;
+    µV.common.showTooltip(`${mode} Mode.`);
   }
 
   /** Register events and handlers. */

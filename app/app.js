@@ -10,7 +10,7 @@ class App {
   constructor() {
     this.ctx = new AudioContext();
     this.common = new Common();
-    this.editor = new Editor();
+    this.editor = new Editor(document.getElementById('uv-main-content'));
     this.runtime = window.runtime || new BrowserRuntime();
   }
 
