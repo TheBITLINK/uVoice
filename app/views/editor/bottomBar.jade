@@ -2,7 +2,7 @@
   button: .material-icons play_arrow
   span 0:00.00
   span.separator
-  input(type='range')#uv-timeSlider
+  input(type='range', v-model='viewX', :max='timelineWidth')#uv-timeSlider
   .right
     button.uv-autohide
       .material-icons slow_motion_video

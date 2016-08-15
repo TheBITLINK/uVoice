@@ -11,7 +11,8 @@ export default class PianoRoll
    * Initializes a new PianoRoll instance.
    * @param {HTMLElement} el - Linked HTML element.
    */
-  constructor(el) {
+  constructor(editor, el) {
+    this.editor = editor;
     this.el = el;
     this.playing = {};
     this.keyEvents();

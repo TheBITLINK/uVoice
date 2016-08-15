@@ -9,6 +9,21 @@
 
     .noteContainer {
         width: 100%;
+        position: relative;
+
+        canvas {
+            position: absolute;
+            top: 0;
+            right: 0;
+        }
+    }
+
+    .uv-zoom-buttons {
+        position: fixed;
+        bottom: 32px;
+        right: 16px;
+        height: 36px;
+        z-index: 30;
     }
 
     .note {

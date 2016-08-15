@@ -10,3 +10,7 @@
             .sharp.note(data-n=note.substr(0,1), data-o=o, name=note.substr(0,1)+'s'+o): .pianoKey
           else
             .note(data-n=note, data-o=o, name=note+o): .pianoKey
+    //- Zoom buttons
+    .ui.icon.buttons.uv-zoom-buttons
+      .ui.button(v-on:click='zoomOut()'): i.material-icons zoom_out
+      .ui.button(v-on:click='zoomIn()'): i.material-icons zoom_in
