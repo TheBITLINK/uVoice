@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="18.062222mm"
+   height="18.062222mm"
+   viewBox="0 0 64 64"
+   id="svg2"
+   version="1.1"
+   inkscape:version="0.91 r13725"
+   sodipodi:docname="uvlogo2.svg">
+  <title
+     id="title3520">µVoice Logo</title>
+  <defs
+     id="defs4" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#1a97ff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="5.6"
+     inkscape:cx="2.8749586"
+     inkscape:cy="42.126433"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     units="mm"
+     inkscape:window-width="1366"
+     inkscape:window-height="705"
+     inkscape:window-x="0"
+     inkscape:window-y="27"
+     inkscape:window-maximized="1"
+     borderlayer="true"
+     inkscape:showpageshadow="true" />
+  <metadata
+     id="metadata7">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title>µVoice Logo</dc:title>
+        <cc:license
+           rdf:resource="http://creativecommons.org/licenses/by-sa/3.0/" />
+        <dc:creator>
+          <cc:Agent>
+            <dc:title>TheBITLINK</dc:title>
+          </cc:Agent>
+        </dc:creator>
+      </cc:Work>
+      <cc:License
+         rdf:about="http://creativecommons.org/licenses/by-sa/3.0/">
+        <cc:permits
+           rdf:resource="http://creativecommons.org/ns#Reproduction" />
+        <cc:permits
+           rdf:resource="http://creativecommons.org/ns#Distribution" />
+        <cc:requires
+           rdf:resource="http://creativecommons.org/ns#Notice" />
+        <cc:requires
+           rdf:resource="http://creativecommons.org/ns#Attribution" />
+        <cc:permits
+           rdf:resource="http://creativecommons.org/ns#DerivativeWorks" />
+        <cc:requires
+           rdf:resource="http://creativecommons.org/ns#ShareAlike" />
+      </cc:License>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(0,-988.36214)">
+    <g
+       transform="translate(-2.5357143,988.005)"
+       style="font-style:normal;font-weight:normal;font-size:50px;line-height:135.00000238%;font-family:sans-serif;text-align:end;letter-spacing:-0.06px;word-spacing:0px;text-anchor:end;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       id="flowRoot3336">
+      <path
+         d="m 15.677539,27.628907 0,15.454102 q 0.02441,3.979492 1.269531,5.883789 1.269532,1.904297 4.101563,1.904297 4.858398,0 6.37207,-3.710938 l 0,-19.53125 4.541016,0 0,26.416016 -4.077149,0 -0.219726,-2.807617 q -2.270508,3.295898 -6.420899,3.295898 -3.588867,0 -5.566406,-1.782226 l 0,11.450195 -4.516601,0 0,-36.572266 4.516601,0 z"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:50px;line-height:135.00000238%;font-family:Roboto;-inkscape-font-specification:Roboto;letter-spacing:-3.45000005px;fill:#ffffff"
+         id="path3338"
+         inkscape:connector-curvature="0" />
+      <path
+         d="m 48.165038,47.819337 10.15625,-29.321289 5.126953,0 -13.183593,35.546875 -4.150391,0 -13.15918,-35.546875 5.102539,0 10.107422,29.321289 z"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:50px;line-height:135.00000238%;font-family:Roboto;-inkscape-font-specification:Roboto;letter-spacing:-3.45000005px;fill:#ffffff"
+         id="path3340"
+         inkscape:connector-curvature="0" />
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,16 @@
+//- There's probably a better way to do this
+.uv-pianoRoll
+  .noteContainer
+    - var notes = ["B","A#","A","G#","G","F#","F","E","D#","D","C#","C"]
+    - for (var o = 6; o > 1; o-- )
+      .octave(data-o=o)
+        each note in notes
+          - var isSharp = note.indexOf('#') >= 0
+          if isSharp
+            .sharp.note(v-bind:style="{ height: noteHeight + 'px' }", data-n=note.substr(0,1), data-o=o, name=note.substr(0,1)+'s'+o): .pianoKey
+          else
+            .note(v-bind:style="{ height: noteHeight + 'px' }", data-n=note, data-o=o, name=note+o): .pianoKey
+    //- Zoom buttons
+    .ui.icon.buttons.uv-zoom-buttons
+      .ui.button(v-on:click='zoomOut()'): i.material-icons zoom_out
+      .ui.button(v-on:click='zoomIn()'): i.material-icons zoom_in

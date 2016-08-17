@@ -1,0 +1,14 @@
+.uv-bottomBar
+  button: .material-icons play_arrow
+  span 0:00.00
+  span.separator
+  input(type='range', v-model='viewX', :max='timelineWidth')#uv-timeSlider
+  .right
+    button.uv-autohide
+      .material-icons slow_motion_video
+      span 120BPM
+    button: .material-icons volume_down
+    span.separator.uv-autohide
+    button#uv-e-refresh: .material-icons refresh
+    button#uv-e-devtools: .material-icons bug_report
+        

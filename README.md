@@ -1,6 +1,6 @@
-uVoice
+µVoice Zero
 ==========
 
-Currently in development phase, uVoice will work as a Vocaloid / UTAU replacement...
+Let's start from scratch!
 
-![Screenshot](http://d.thebit.link/img/uvs.png)
+![Screenshot](app/assets/images/screenshot.png)

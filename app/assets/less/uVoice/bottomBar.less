@@ -1,0 +1,115 @@
+.uv-bottomBar {
+    background: @accent-color;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    color: #FFF;
+    padding: 0 4px 0 4px;
+    position: fixed;
+    bottom: 0;
+    
+    .desktop & {
+        border-radius: 0 0 3px 3px;
+    }
+
+    button, div, input, span {
+        display: inline-block;
+        background: transparent;
+        border: none;
+        width: auto;
+        height: 24px;
+    }
+
+    button {
+        padding: 0 4px;
+        height: 24px!important;
+        line-height: 24px;
+        vertical-align: middle;
+        cursor: default;
+        &:hover {
+            background: rgba(0,0,0,.2);
+        }
+        span {
+            margin-top: -2px;
+        }
+    }
+
+    span {
+        vertical-align: top;
+        padding: 3px 3px;
+        cursor: default;
+        user-select: none;
+    }
+
+    .separator {
+        width: 4px;
+        cursor: default;
+        user-select: none;
+    }
+
+    input[type=range]#uv-timeSlider {
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        outline: none;
+        flex-grow: 1;
+
+        // autoprefixer doesn't seem to cover this ;-;
+        &::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            width: 0;
+            border-radius: 0;
+            border: 1px solid #FFFFFF;
+            height: 24px;
+            cursor: pointer;
+        }
+
+        &::-moz-range-thumb {
+            -moz-appearance: none;
+            width: 0;
+            border-radius: 0;
+            border: 1px solid #FFFFFF;
+            height: 24px;
+            cursor: pointer;
+        }
+
+        &::-ms-thumb {
+            width: 0;
+            border-radius: 0;
+            border: 1px solid #FFFFFF;
+            height: 24px;
+            cursor: pointer;
+        }
+
+        &::-webkit-slider-runnable-track {
+            width: 100%;
+            height: 24px;
+            cursor: pointer;
+            background: @accent-darker;
+        }
+
+        &::-moz-range-track {
+            width: 100%;
+            height: 24px;
+            cursor: pointer;
+            background: @accent-darker;
+        }
+
+         &::-ms-track {
+            width: 100%;
+            height: 24px;
+            cursor: pointer;
+            background: @accent-darker;
+         }
+
+        .material-icons {
+          margin-top: -2px;
+        }
+    }
+}
+
+.browser, .mobile {
+    #uv-e-devtools, #uv-e-refresh {
+      display: none;
+    }
+}
