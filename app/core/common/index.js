@@ -1,5 +1,5 @@
 import $ from 'jquery';
-import noteFrequencies from './notes';
+import { NoteToFreq, NoteToIndex } from './notes';
 
 /**
  * µVoice Common Functions
@@ -7,7 +7,9 @@ import noteFrequencies from './notes';
  */
 export default class Common {
   constructor() {
-    this.notes = noteFrequencies;
+    this.notes = NoteToFreq;
+    this.noteIndexes = NoteToIndex;
+    this.accentColor = 0x00AACC;
   }
 
   /** Initialize µVoice. */

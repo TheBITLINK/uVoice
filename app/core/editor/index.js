@@ -3,6 +3,7 @@ import $ from 'jquery';
 import EventEmitter from 'events';
 import PianoRoll from './pianoRoll';
 import EditorCanvas from './canvas';
+import { Project } from '../models';
 
 /**
  * µVoice Editor class.
@@ -27,6 +28,9 @@ export default class Editor extends EventEmitter {
     this.viewX = 0;
     this.zoomFactor = 1;
     this.timelineWidth = 100;
+    this.noteHeight = 16;
+
+    this.project = new Project();
 
     this.vue = new Vue({
       data: this,
@@ -46,6 +50,9 @@ export default class Editor extends EventEmitter {
            */
           this.emit('zoomChange', newFactor);
         },
+        noteHeight: () => requestAnimationFrame(() => {
+          this.canvas.updateRendererSize();
+        }),
       },
     });
 
@@ -68,7 +75,13 @@ export default class Editor extends EventEmitter {
    * @param {number} [zoomFactor=this.zoomFactor] - Current zoom factor
    */
   updateTimelineWidth(zoomFactor = this.zoomFactor) {
-    this.timelineWidth = 100 * zoomFactor;
+    // TODO: Optimize this.
+    let baseWidth = 100;
+    for (const noteObject of this.project.noteObjects) {
+      const n = noteObject.offset + noteObject.width;
+      if (n > baseWidth) baseWidth = n;
+    }
+    this.timelineWidth = baseWidth * zoomFactor;
   }
 
   /** Increases the Zoom */

@@ -35,7 +35,9 @@ class ElectronRuntime extends Runtime
     document.getElementById('minimize-btn').addEventListener('click', () => this.minimizeWindow());
     document.getElementById('minimize-btn').addEventListener('click', () => this.minimizeWindow());
     document.getElementById('uv-e-devtools').addEventListener('click', () => this.toggleDevTools());
-    document.getElementById('uv-e-refresh').addEventListener('click', () => window.location.reload());
+    document.getElementById('uv-e-refresh').addEventListener('click', () => {
+      window.location.reload();
+    });
   }
 
   /** Minimize the app window */

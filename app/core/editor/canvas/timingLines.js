@@ -20,11 +20,17 @@ export default class TimimngLines {
     this.stage = new PIXI.Container();
     this.lines = new PIXI.Graphics();
     this.stage.addChild(this.lines);
+    this.lastX = undefined;
+    this.lastZoom = undefined;
   }
 
   /** Redraw the lines */
   update() {
-    // TODO: Efficient way of redrawing lines.
+    // Avoid useless redraws
+    if (this.editor.viewX === this.lastX && this.editor.zoomFactor === this.lastZoom) return;
+    this.lastX = this.editor.viewX;
+    this.lastZoom = this.editor.viewFactor;
+    // Redraw lines
     const lineSpacing = this.editor.zoomFactor * 96;
     const maxLines = Math.floor(this.renderer.width / lineSpacing) + 2;
     const offsetLines = Math.floor(this.editor.viewX / lineSpacing);
@@ -42,7 +48,5 @@ export default class TimimngLines {
       this.lines.moveTo(lineX, 0);
       this.lines.lineTo(lineX, this.renderer.height);
     }
-
-    this.renderer.render(this.stage);
   }
 }

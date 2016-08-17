@@ -2,8 +2,9 @@ import $ from 'jquery';
 
 /**
  * µVoice Piano Roll class
- * @property {HTMLElement} - HTML element.
+ * @property {HTMLElement} el - HTML element.
  * @property {object} playing - Notes being played.
+ * @property {HTMLElement[]} notes - Notes elements.
  */
 export default class PianoRoll
 {
@@ -16,12 +17,13 @@ export default class PianoRoll
     this.el = el;
     this.playing = {};
     this.keyEvents();
+    this.notes = el.querySelectorAll('.note');
   }
 
   /** Bind events to the piano keys */
   keyEvents() {
-    $(this.el).on('mousedown', '.pianoKey', e => this.playNote(e.target.parentElement));
-    $(this.el).on('mouseup', '.pianoKey', () => this.stopAll());
+    $(this.el).on('mousedown touchstart', '.pianoKey', e => this.playNote(e.target.parentElement));
+    $(this.el).on('mouseup touchend', '.pianoKey', () => this.stopAll());
   }
 
   /**
